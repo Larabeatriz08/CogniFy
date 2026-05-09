@@ -1,5 +1,5 @@
 # CogniFy
----
+
 
 ## Sobre o Projeto
 
@@ -19,13 +19,13 @@ Desenvolvido utilizando apenas:
 
 O foco principal do projeto é criar uma experiência visual premium, moderna e totalmente responsiva.
 
----
+
 
 ## Funcionalidades
 
 <div>
   <ul>
-    <li> Landing page moderna estilo SaaS</li>
+    <li>Landing page moderna estilo SaaS</li>
     <li>Dark mode futurista</li>
     <li>Layout 100% responsivo</li>
     <li>Navbar dinâmica</li>
@@ -38,3 +38,18 @@ O foco principal do projeto é criar uma experiência visual premium, moderna e 
     <li>Interface inspirada em startups reais</li>
   </ul>
 </div>
+
+
+## Objetivo do Projeto
+
+O objetivo do CogniFy é praticar e demonstrar habilidades de desenvolvimento front-end através da criação de uma interface moderna e profissional inspirada em produtos reais do mercado de tecnologia.
+
+O projeto foi desenvolvido com foco em:
+
+- UI/UX
+- Responsividade
+- Organização visual
+- Motion design
+- Estruturação semântica
+- Experiência do usuário
+
