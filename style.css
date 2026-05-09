@@ -2,7 +2,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Inter, Satoshi, sans-serif;
+  font-family:Inter, sans-serif;
 }
 
 body{
@@ -19,7 +19,7 @@ body{
   margin:auto;
 }
 
-/* NAVBAR */
+
 
 nav{
   margin-top:20px;
@@ -42,6 +42,7 @@ nav{
   font-weight:bold;
 }
 
+
 .logo-icon{
   width:42px;
   height:42px;
@@ -50,10 +51,17 @@ nav{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#111;
-  font-size:20px;
 }
 
+.brain-icon{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:#111;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
 .logo span{
   color:#b58cff;
 }
@@ -91,7 +99,7 @@ nav{
   box-shadow:0 0 25px rgba(167,139,250,.5);
 }
 
-/* HERO */
+
 
 .hero{
   position:relative;
@@ -114,6 +122,7 @@ nav{
   margin-bottom:40px;
 }
 
+
 h1{
   font-size:84px;
   line-height:1.05;
@@ -123,11 +132,12 @@ h1{
   letter-spacing:-3px;
 }
 
+
 h1 span{
   color:#b58cff;
 }
 
-.description{
+.descricao{
   max-width:850px;
   margin:40px auto;
   color:#b7b7c7;
@@ -143,7 +153,7 @@ h1 span{
   flex-wrap:wrap;
 }
 
-.primary-btn{
+.primario-btn{
   background:#a78bfa;
   color:#111;
   padding:22px 42px;
@@ -155,12 +165,12 @@ h1 span{
   transition:.3s;
 }
 
-.primary-btn:hover{
+.primario-btn:hover{
   transform:translateY(-3px);
   box-shadow:0 0 35px rgba(167,139,250,.55);
 }
 
-.secondary-btn{
+.secundario-btn{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.08);
   color:white;
@@ -172,11 +182,11 @@ h1 span{
   transition:.3s;
 }
 
-.secondary-btn:hover{
+.secundario-btn:hover{
   background:rgba(255,255,255,.09);
 }
 
-/* STATS */
+
 
 .stats{
   margin-top:70px;
@@ -196,7 +206,7 @@ h1 span{
   font-size:22px;
 }
 
-/* GRID EFFECT */
+
 
 .grid{
   position:absolute;
@@ -210,8 +220,6 @@ h1 span{
   z-index:-1;
 }
 
-/* RESPONSIVO */
-
 @media(max-width:900px){
 
   .menu{
@@ -222,12 +230,12 @@ h1 span{
     font-size:56px;
   }
 
-  .description{
+  .descricao{
     font-size:24px;
   }
 
-  .primary-btn,
-  .secondary-btn{
+  .primario-btn,
+  .secundario-btn{
     font-size:20px;
     padding:18px 30px;
   }
@@ -239,4 +247,38 @@ h1 span{
   .stat p{
     font-size:18px;
   }
+}
+
+.seta-icon{
+  margin-left:10px;
+}
+
+.play-icon{
+  margin-right:10px;
+}
+
+.primario-btn,
+.secundario-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+
+#typing-word{
+  color:#b58cff;
+  display:inline-block;
+}
+
+.cursor{
+  color:#b58cff;
+  font-weight:100;
+  font-size:0.85em;
+  opacity:0.8;
+  animation:blink 1s steps(1) infinite;
+}
+
+@keyframes blink{
+  50%{ opacity:0; }
 }
