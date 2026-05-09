@@ -1,2 +1,40 @@
 # CogniFy
-CogniFy é uma landing page moderna inspirada em startups de tecnologia e inteligência artificial, desenvolvida com HTML, CSS e JavaScript puro. O projeto simula uma plataforma inteligente de estudos, com foco em experiência do usuário, design futurista, responsividade e interações dinâmicas.
+---
+
+## Sobre o Projeto
+
+O CogniFy é uma landing page moderna inspirada em startups de inteligência artificial e plataformas SaaS.
+
+O projeto simula uma plataforma inteligente de estudos que ajuda estudantes a organizarem suas rotinas, aumentarem a produtividade e otimizarem o aprendizado utilizando IA.
+
+Desenvolvido utilizando apenas:
+<div>
+  <ul>
+   <li>HTML5</li> 
+    <li>CSS3</li>
+    <li>JavaScript Vanilla</li>
+  </ul>
+</div>
+
+
+O foco principal do projeto é criar uma experiência visual premium, moderna e totalmente responsiva.
+
+---
+
+## Funcionalidades
+
+<div>
+  <ul>
+    <li> Landing page moderna estilo SaaS</li>
+    <li>Dark mode futurista</li>
+    <li>Layout 100% responsivo</li>
+    <li>Navbar dinâmica</li>
+    <li>Scroll suave</li>
+    <li>Cards interativos</li>
+    <li>Dashboard visual moderna</li>
+    <li>Animações suaves</li>
+    <li>Efeitos glassmorphism</li>
+    <li>Hover effects premium</li>
+    <li>Interface inspirada em startups reais</li>
+  </ul>
+</div>
