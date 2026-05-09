@@ -55,7 +55,7 @@ O projeto foi desenvolvido com foco em:
 
 
 
-# # Como Executar o Projeto
+ ## Como Executar o Projeto
 
 ```bash
 # Clone o repositório
@@ -69,7 +69,7 @@ cd Cognify
 # Execute o index.html
 ```
 
-# # Made by
+ ## Made by
 
-Developed with <div class="icon-coffee"></div> and code by **Lara Lima** 
+Developed with<img src="https://img.icons8.com/ios-filled/50/ffffff/coffee.png" width="16"/> and code by **Lara Lima** 
 
