@@ -401,6 +401,31 @@ h1 span{
     box-shadow:
     0 0 30px rgba(139,92,246,0.15);
 }
+.card-titulo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#9ea6c3;
+    font-size:15px;
+    font-weight:500;
+
+    line-height:1;
+}
+
+.card-titulo i{
+    width:17px;
+    height:17px;
+
+    color:#b58cff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    top:-1px;
+}
 
 
 
