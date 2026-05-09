@@ -53,3 +53,23 @@ O projeto foi desenvolvido com foco em:
 - Estruturação semântica
 - Experiência do usuário
 
+
+
+# # Como Executar o Projeto
+
+```bash
+# Clone o repositório
+
+git clone https://github.com/Larabeatriz08/Cognify.git
+
+# Abra a pasta
+
+cd Cognify
+
+# Execute o index.html
+```
+
+# # Made by
+
+Developed with <div class="icon-coffee"></div> and code by **Lara Lima** 
+
