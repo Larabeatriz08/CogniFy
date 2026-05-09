@@ -9,57 +9,43 @@
   <title>Cognify AI</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-
   <div class="container">
-
     <nav>
-
       <div class="logo">
     <div class="logo-icon">
-
         <svg class="brain-icon" viewBox="0 0 24 24">
         <path d="M12 2C9 2 7 4 7 7c0 .5.1 1 .3 1.5C5.3 9 4 10.8 4 13c0 2.4 1.7 4.4 4 4.9V18c0 2.2 1.8 4 4 4s4-1.8 4-4v-.1c2.3-.5 4-2.5 4-4.9 0-2.2-1.3-4-3.3-4.5.2-.5.3-1 .3-1.5 0-3-2-5-5-5z"/>
         </svg>
-
     </div>
-
   CogniFy <span>AI</span>
 </div>
-
       <div class="menu">
         <a href="#">Features</a>
         <a href="#">Dashboard</a>
         <a href="#">About</a>
         <a href="#">FAQ</a>
       </div>
-
       <button class="nav-btn">Start Free</button>
-
     </nav>
 
     <section class="hero">
-
       <div class="grid"></div>
-
       <div class="badge">
         New · Powered by adaptive AI
       </div>
       
-
      <h1>
         Estude com uma IA que entende 
         <span id="typing-word"></span>
         <span class="cursor">|</span>
     </h1>
-
       <p class="descricao">
         Cognify organiza sua rotina, gera cronogramas inteligentes e acompanha seu desempenho — tudo em um espaço calmo e feito para focar.
       </p>
-
 <div class="buttons">
-
   <button class="primario-btn">
 
     Start Free
@@ -74,36 +60,27 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round">
-
       <line x1="5" y1="12" x2="19" y2="12"/>
       <polyline points="12 5 19 12 12 19"/>
-
     </svg>
-
   </button>
 
   <button class="secundario-btn">
-
-    
 
     <svg class="play-icon"
       width="20"
       height="20"
       viewBox="0 0 24 24"
       fill="#b58cff">
-
       <polygon points="8,5 19,12 8,19"/>
-
     </svg>
 
     Watch Demo
 
   </button>
-
 </div>
 
       <div class="stats">
-
         <div class="stat">
           <h2>50k+</h2>
           <p>Estudantes</p>
@@ -118,12 +95,122 @@
           <h2>98%</h2>
           <p>Recomendam</p>
         </div>
+      </div>
+    </section>
+  </div> 
 
+
+
+<section class="dashboard-section">
+  <div class="dashboard-container">
+    <div class="top-bar">
+      <div class="pontos">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-    </section>
+      <div class="url">CogniFy.ai/dashboard</div>
 
+      <div class="sequencia">
+        🔥 12 dias de sequência
+      </div>
+    </div>
+
+    <div class="hero-text">
+        <p id="greetingText"></p>
+        <h1>Sua semana está no caminho certo</h1>
+    </div>
+
+<div class="stats-grid">
+  <div class="card stat-card">
+    <span class="card-titulo">
+      <i data-lucide="trending-up"></i>
+      Produtividade
+    </span>
+    <h2 class="contador" data-target="92">0%</h2>
   </div>
+
+  <div class="card stat-card">
+    <span class="card-titulo">
+      <i data-lucide="clock-3"></i>
+      Horas
+    </span>
+    <h2 class="conta-horas" data-target="24">0h</h2>
+  </div>
+
+  <div class="card stat-card">
+    <span class="card-titulo">
+      <i data-lucide="target"></i>
+      Metas
+    </span>
+   <h2 class="conta-metas" data-target="8">0/10</h2>
+  </div>
+</div>
+
+    
+    <div class="card grafico-card">
+      <div class="grafico-header">
+        <h3>Foco semanal</h3>
+        <span>+18% vs last</span>
+      </div>
+
+      <div class="grafico">
+        <div class="linha"></div>
+        <div class="dias">
+          <span>S</span>
+          <span>T</span>
+          <span>Q</span>
+          <span>Q</span>
+          <span>S</span>
+          <span>S</span>
+          <span>D</span>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="card tasks-card">
+      <div class="tasks-header">
+        <h3>Hoje</h3>
+        <span>0 of 5</span>
+      </div>
+      <div class="task completed">
+        <input type="checkbox" checked>
+        <p>Revisão Calculo - Capítulo 4</p>
+      </div>
+
+      <div class="task completed">
+        <input type="checkbox" checked>
+        <p>Pratique Espanhol — 30 min</p>
+      </div>
+
+      <div class="task">
+        <input type="checkbox">
+        <p>Resolver lista de Física</p>
+      </div>
+
+      <div class="task">
+        <input type="checkbox">
+        <p>Revisar notas de Biologia</p>
+      </div>
+
+      <div class="task">
+        <input type="checkbox">
+        <p>Finalizar rascunho de Redação</p>
+      </div>
+    </div>
+
+    
+    <div class="ai-popup">
+      <div class="icon">🧠</div>
+      <div>
+        <small>Sugestão da IA</small>
+        <p>faça uma pausa de 10 minutos</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <script src="script.js"></script>
 </body>
