@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <title>Cognify AI</title>
 
@@ -20,7 +20,7 @@
 
   <div class="container">
 
-    <nav>
+    <nav class="nav-container">
 
       <div class="logo">
 
@@ -55,11 +55,13 @@
         New · Powered by adaptive AI
       </div>
 
-      <h1>
-        Estude com uma IA que entende
+      <h1 class="titulo-hero">
+      Estude com uma IA que entende
+      <span class="typing-wrapper">
         <span id="typing-word"></span>
         <span class="cursor">|</span>
-      </h1>
+  </span>
+</h1>
 
       <p class="descricao">
         Cognify organiza sua rotina, gera cronogramas inteligentes e acompanha seu desempenho — tudo em um espaço calmo e feito para focar.
@@ -155,7 +157,9 @@
 
         <p id="greetingText"></p>
 
-        <h1>Sua semana está no caminho certo</h1>
+        <h1 class="titulo-dashboard">
+          Sua semana está no caminho certo
+        </h1>
 
       </div>
 
@@ -269,6 +273,99 @@
           <small>Sugestão da IA</small>
           <p>faça uma pausa de 10 minutos</p>
         </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="features-section">
+
+    <div class="trusted">
+
+      <p>TRUSTED BY STUDENTS AT</p>
+
+      <div class="trusted-logos">
+        <span>Stanford</span>
+        <span>MIT</span>
+        <span>Cambridge</span>
+        <span>Oxford</span>
+        <span>Harvard</span>
+        <span>Berkeley</span>
+      </div>
+
+    </div>
+
+    <div class="features-header">
+
+      <small>FEATURES</small>
+
+      <h2>
+        Tudo o que você precisa para estudar melhor
+      </h2>
+
+      <p>
+        Ferramentas pensadas para reduzir o ruído e dar clareza ao seu progresso.
+      </p>
+
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i data-lucide="calendar-days"></i>
+        </div>
+
+        <h3>AI Schedule</h3>
+
+        <p>
+          Cronogramas que se adaptam ao seu humor, sono e prazos automaticamente.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i data-lucide="file-text"></i>
+        </div>
+
+        <h3>Smart Notes</h3>
+
+        <p>
+          Resumos inteligentes, flashcards e revisões espaçadas geradas em segundos.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i data-lucide="chart-no-axes-column"></i>
+        </div>
+
+        <h3>Progress Tracking</h3>
+
+        <p>
+          Acompanhe horas focadas, metas e padrões para entender o que funciona.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i data-lucide="sparkles"></i>
+        </div>
+
+        <h3>Study Analytics</h3>
+
+        <p>
+          Insights semanais sobre produtividade, energia e tópicos que precisam atenção.
+        </p>
 
       </div>
 
