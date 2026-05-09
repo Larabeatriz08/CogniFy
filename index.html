@@ -9,6 +9,7 @@
   <title>Cognify AI</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -141,48 +142,48 @@
 
       <div class="url">CogniFy.ai/dashboard</div>
 
-      <div class="streak">
-        🔥 12 day streak
+      <div class="sequencia">
+        🔥 12 dias de sequência
       </div>
     </div>
 
     <div class="hero-text">
-      <p>Bom dia, Alex</p>
-      <h1>Your week is on track</h1>
+      <<p id="greetingText"></p>
+      <h1>Sua semana está no caminho certo</h1>
     </div>
 
     <div class="stats-grid">
 
-      <div class="card stat-card">
-        <span>↗ Produtividade</span>
-        <h2>92%</h2>
-      </div>
+      <span class="card-title">
+          <i data-lucide="trending-up"></i>
+          Produtividade
+      </span>
 
       <div class="card stat-card">
-        <span>🕒 Hours</span>
+        <span>🕒 Horas</span>
         <h2>24h</h2>
       </div>
 
       <div class="card stat-card">
         <span>◎ Goals</span>
-        <h2>8/10</h2>
+       <h2 class="counter-goals" data-target="8">0/10</h2>
       </div>
 
     </div>
 
     
-    <div class="card graph-card">
+    <div class="card grafico-card">
 
-      <div class="graph-header">
-        <h3>Focus semanal</h3>
+      <div class="grafico-header">
+        <h3>Foco semanal</h3>
         <span>+18% vs last</span>
       </div>
 
-      <div class="graph">
+      <div class="grafico">
 
-        <div class="line"></div>
+        <div class="linha"></div>
 
-        <div class="days">
+        <div class="dias">
           <span>S</span>
           <span>T</span>
           <span>Q</span>
@@ -200,33 +201,33 @@
     <div class="card tasks-card">
 
       <div class="tasks-header">
-        <h3>Today</h3>
+        <h3>Hoje</h3>
         <span>3 of 5</span>
       </div>
 
       <div class="task completed">
         <input type="checkbox" checked>
-        <p>Review Calculus chapter 4</p>
+        <p>Revisão Calculo - Capítulo 4</p>
       </div>
 
       <div class="task completed">
         <input type="checkbox" checked>
-        <p>Practice Spanish — 30 min</p>
+        <p>Pratique Espanhol — 30 min</p>
       </div>
 
       <div class="task">
         <input type="checkbox">
-        <p>Physics problem set</p>
+        <p>Resolver lista de Física</p>
       </div>
 
       <div class="task">
         <input type="checkbox">
-        <p>Read biology notes</p>
+        <p>Revisar notas de Biologia</p>
       </div>
 
       <div class="task">
         <input type="checkbox">
-        <p>Finish essay draft</p>
+        <p>Finalizar rascunho de Redação</p>
       </div>
 
     </div>
@@ -236,8 +237,8 @@
       <div class="icon">🧠</div>
 
       <div>
-        <small>AI suggestion</small>
-        <p>Take a 10 min break</p>
+        <small>Sugestão da IA</small>
+        <p>faça uma pausa de 10 minutos</p>
       </div>
     </div>
 
