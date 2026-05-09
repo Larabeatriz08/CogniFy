@@ -26,9 +26,7 @@ O foco principal do projeto é criar uma experiência visual premium, moderna e 
 <div>
   <ul>
     <li>Landing page moderna estilo SaaS</li>
-    <li>Dark mode futurista</li>
     <li>Layout 100% responsivo</li>
-    <li>Navbar dinâmica</li>
     <li>Scroll suave</li>
     <li>Cards interativos</li>
     <li>Dashboard visual moderna</li>
