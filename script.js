@@ -104,95 +104,130 @@ cards.forEach((card, index) => {
 
 
 
-const contadores =
-document.querySelectorAll(".contador");
+const dashboard =
+document.querySelector(".dashboard-section");
 
-contadores.forEach(contador => {
+let contadoresIniciados = false;
 
-  const atualizarContador = () => {
+const observerDashboard =
+new IntersectionObserver((entries) => {
 
-    const alvo =
-    +contador.getAttribute("data-target");
+  entries.forEach(entry => {
 
-    const atual =
-    +contador.innerText.replace("%","");
+    if(
+      entry.isIntersecting &&
+      !contadoresIniciados
+    ){
 
-    const incremento = alvo / 60;
+      iniciarContadores();
 
-    if(atual < alvo){
-
-      contador.innerText =
-      `${Math.ceil(atual + incremento)}%`;
-
-      setTimeout(
-        atualizarContador,
-        25
-      );
-
-    } else {
-
-      contador.innerText =
-      alvo + "%";
+      contadoresIniciados = true;
     }
-  };
 
-  atualizarContador();
+  });
+
+}, {
+  threshold:0.35
 });
 
-
-
-const contadorHoras =
-document.querySelector(".conta-horas");
-
-if(contadorHoras){
-
-  let atual = 0;
-
-  const alvo =
-  Number(contadorHoras.dataset.target);
-
-  const intervalo =
-  setInterval(() => {
-
-    atual++;
-
-    contadorHoras.innerHTML =
-    atual + "h";
-
-    if(atual >= alvo){
-
-      clearInterval(intervalo);
-    }
-
-  }, 70);
-}
+observerDashboard.observe(dashboard);
 
 
 
-const contadorMetas =
-document.querySelector(".conta-metas");
+function iniciarContadores(){
 
-if(contadorMetas){
+  const contadores =
+  document.querySelectorAll(".contador");
 
-  let atual = 0;
+  contadores.forEach(contador => {
 
-  const alvo =
-  +contadorMetas.dataset.target;
+    const atualizarContador = () => {
 
-  const intervalo =
-  setInterval(() => {
+      const alvo =
+      +contador.getAttribute("data-target");
 
-    atual++;
+      const atual =
+      +contador.innerText.replace("%","");
 
-    contadorMetas.innerText =
-    atual + "/10";
+      const incremento = alvo / 60;
 
-    if(atual >= alvo){
+      if(atual < alvo){
 
-      clearInterval(intervalo);
-    }
+        contador.innerText =
+        `${Math.ceil(atual + incremento)}%`;
 
-  }, 120);
+        setTimeout(
+          atualizarContador,
+          25
+        );
+
+      } else {
+
+        contador.innerText =
+        alvo + "%";
+      }
+    };
+
+    atualizarContador();
+
+  });
+
+
+
+  const contadorHoras =
+  document.querySelector(".conta-horas");
+
+  if(contadorHoras){
+
+    let atual = 0;
+
+    const alvo =
+    Number(contadorHoras.dataset.target);
+
+    const intervalo =
+    setInterval(() => {
+
+      atual++;
+
+      contadorHoras.innerHTML =
+      atual + "h";
+
+      if(atual >= alvo){
+
+        clearInterval(intervalo);
+      }
+
+    }, 70);
+  }
+
+
+
+  const contadorMetas =
+  document.querySelector(".conta-metas");
+
+  if(contadorMetas){
+
+    let atual = 0;
+
+    const alvo =
+    +contadorMetas.dataset.target;
+
+    const intervalo =
+    setInterval(() => {
+
+      atual++;
+
+      contadorMetas.innerText =
+      atual + "/10";
+
+      if(atual >= alvo){
+
+        clearInterval(intervalo);
+      }
+
+    }, 120);
+  }
+
 }
 
 
@@ -236,41 +271,109 @@ document.querySelector(".tasks-header span");
 
 function atualizarLista(){
 
-    let concluidas = 0;
+  let concluidas = 0;
 
-    tarefas.forEach(tarefa => {
+  tarefas.forEach(tarefa => {
 
-        const checkbox =
-        tarefa.querySelector('input[type="checkbox"]');
+    const checkbox =
+    tarefa.querySelector(
+      'input[type="checkbox"]'
+    );
 
-        if(checkbox.checked){
+    if(checkbox.checked){
 
-            concluidas++;
+      concluidas++;
 
-            tarefa.classList.add("completed");
+      tarefa.classList.add(
+        "completed"
+      );
 
-        } else {
+    } else {
 
-            tarefa.classList.remove("completed");
-        }
+      tarefa.classList.remove(
+        "completed"
+      );
+    }
 
-    });
+  });
 
-    contadorTarefas.innerText =
-    `${concluidas} de ${tarefas.length}`;
+  contadorTarefas.innerText =
+  `${concluidas} de ${tarefas.length}`;
 }
 
 tarefas.forEach(tarefa => {
 
-    const checkbox =
-    tarefa.querySelector('input[type="checkbox"]');
+  const checkbox =
+  tarefa.querySelector(
+    'input[type="checkbox"]'
+  );
 
-    checkbox.addEventListener(
-        "change",
-        atualizarLista
-    );
+  checkbox.addEventListener(
+    "change",
+    atualizarLista
+  );
 });
 
 atualizarLista();
+
+
+const featureCards =
+document.querySelectorAll(".feature-card");
+
+featureCards.forEach(card => {
+
+  card.addEventListener("mousemove", e => {
+
+    const rect =
+    card.getBoundingClientRect();
+
+    const x =
+    e.clientX - rect.left;
+
+    const y =
+    e.clientY - rect.top;
+
+    const centerX =
+    rect.width / 2;
+
+    const centerY =
+    rect.height / 2;
+
+    const rotateX =
+    (centerY - y) / 18;
+
+    const rotateY =
+    (x - centerX) / 18;
+
+    card.style.transition =
+    "0.1s ease";
+
+    card.style.transform =
+    `
+    perspective(1000px)
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    translateY(-10px)
+    scale(1.02)
+    `;
+  });
+
+  card.addEventListener("mouseleave", () => {
+
+    card.style.transition =
+    "0.5s ease";
+
+    card.style.transform =
+    `
+    perspective(1000px)
+    rotateX(0deg)
+    rotateY(0deg)
+    translateY(0px)
+    scale(1)
+    `;
+  });
+
+});
+
 
 lucide.createIcons();
