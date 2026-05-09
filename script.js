@@ -105,7 +105,7 @@ cards.forEach((card, index) => {
 
 
 const contadores =
-document.querySelectorAll(".counter");
+document.querySelectorAll(".contador");
 
 contadores.forEach(contador => {
 
@@ -170,7 +170,7 @@ if(contadorHoras){
 
 
 const contadorMetas =
-document.querySelector(".counter-goals");
+document.querySelector(".conta-metas");
 
 if(contadorMetas){
 
@@ -225,6 +225,56 @@ else{
 
 saudacao.innerText =
 textoSaudacao;
+
+
+const tarefas =
+document.querySelectorAll(".task");
+
+const contadorTarefas =
+document.querySelector(".tasks-header span");
+
+function atualizarLista(){
+
+    let concluidas = 0;
+
+    tarefas.forEach(tarefa => {
+
+        const checkbox =
+        tarefa.querySelector('input[type="checkbox"]');
+
+        const texto =
+        tarefa.querySelector("p");
+
+        if(checkbox.checked){
+
+            concluidas++;
+
+            tarefa.classList.add("completed");
+
+        } else {
+
+            tarefa.classList.remove("completed");
+        }
+
+    });
+
+    contadorTarefas.innerText =
+    `${concluidas} de ${tarefas.length}`;
+}
+
+tarefas.forEach(tarefa => {
+
+    const checkbox =
+    tarefa.querySelector('input[type="checkbox"]');
+
+    checkbox.addEventListener(
+        "change",
+        atualizarLista
+    );
+});
+
+atualizarLista();
+
 
 
 
