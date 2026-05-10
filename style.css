@@ -18,6 +18,9 @@ body{
   min-height:100vh;
   overflow-x:hidden;
 }
+html{
+  scroll-behavior:smooth;
+}
 
 .container{
   width:90%;
@@ -998,6 +1001,16 @@ nav{
   0 0 18px rgba(181,140,255,.08);
 }
 
+.nav-btn,
+.primario-btn,
+.cta-primario{
+  text-decoration:none;
+  color:inherit;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .focus-legenda span{
   width:12px;
   height:12px;
@@ -1017,7 +1030,6 @@ nav{
   gap:25px;
   height:300px;
 }
-
 
 .bar{
   flex:1;
@@ -1372,7 +1384,6 @@ nav{
   radial-gradient(circle at center, black 30%, transparent 85%);
 }
 
-
 .cta-card{
   position:relative;
   width:92%;
@@ -1481,14 +1492,14 @@ nav{
 
 .footer{
   width:100%;
-  margin:80px 0 0;
-  padding:40px 60px 0;
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:60px;
+  padding:24px 40px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  gap:20px;
   flex-wrap:wrap;
-  gap:30px;
-  border-top:1px solid rgba(255,255,255,.06);
 }
 
 .footer-logo{
@@ -1531,6 +1542,8 @@ nav{
 .footer-copy{
   color:#7f87a8;
 }
+
+
 
 @keyframes subirBarra{
   0%{
