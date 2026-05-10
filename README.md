@@ -69,5 +69,5 @@ cd Cognify
 
  ## Made by
 
-Developed with<img src="https://img.icons8.com/ios-filled/50/ffffff/coffee.png" width="16"/> and code by **Lara Lima** 
+Developed with <img src="https://img.icons8.com/ios-filled/50/ffffff/coffee.png" width="16"/> and code by **Lara Lima** 
 
