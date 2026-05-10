@@ -704,36 +704,31 @@ mesSelect.addEventListener("change",(e)=>{
 
 renderHeatmap(9);
 
-const faqItems = document.querySelectorAll(".faq-item");
+const faqItems =
+document.querySelectorAll(".faq-item");
 
 faqItems.forEach(item => {
 
-  const botao =
-  item.querySelector(".faq-btn");
+  const pergunta =
+  item.querySelector(".faq-question");
 
-  botao.addEventListener("click", () => {
+  pergunta.addEventListener("click", () => {
 
     const aberto =
-    item.classList.contains("active");
+    item.classList.contains("open");
 
-    faqItems.forEach(faq => {
+    faqItems.forEach(el => {
 
-      faq.classList.remove("active");
+      el.classList.remove("open");
 
-      const resposta =
-      faq.querySelector(".faq-answer");
+      el.querySelector(".faq-answer")
+      .style.maxHeight = null;
 
-      const icone =
-      faq.querySelector(".faq-btn");
-
-      resposta.style.maxHeight = null;
-
-      icone.innerText = "+";
     });
 
     if(!aberto){
 
-      item.classList.add("active");
+      item.classList.add("open");
 
       const resposta =
       item.querySelector(".faq-answer");
@@ -741,7 +736,6 @@ faqItems.forEach(item => {
       resposta.style.maxHeight =
       resposta.scrollHeight + "px";
 
-      botao.innerText = "−";
     }
 
   });
