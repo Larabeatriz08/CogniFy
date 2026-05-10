@@ -375,5 +375,104 @@ featureCards.forEach(card => {
 
 });
 
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("active");
+    }
+  });
+
+}, {
+  threshold:0.2
+});
+
+revealElements.forEach(el => {
+  revealObserver.observe(el);
+});
+
+
+const numerosDashboard =
+document.querySelectorAll(".numero-dashboard");
+
+const observerNumeros =
+new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      const numero =
+      entry.target;
+
+      const alvo =
+      +numero.dataset.target;
+
+      let atual = 0;
+
+      const incremento =
+      alvo / 50;
+
+      const animar = () => {
+
+        atual += incremento;
+
+        if(atual < alvo){
+
+          numero.innerText =
+          Math.floor(atual);
+
+          requestAnimationFrame(animar);
+
+        } else {
+
+          numero.innerText =
+          alvo;
+
+        }
+      };
+
+      animar();
+
+      observerNumeros.unobserve(numero);
+    }
+
+  });
+
+}, {
+  threshold:0.5
+});
+
+numerosDashboard.forEach(numero => {
+  observerNumeros.observe(numero);
+});
+
+const botoes=document.querySelectorAll("button");
+
+botoes.forEach(botao=>{
+
+  botao.addEventListener("mousemove",(e)=>{
+
+    const rect=botao.getBoundingClientRect();
+
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+
+    botao.style.transform=
+    `translate(${x*0.15}px,${y*0.15}px)`;
+  });
+
+  botao.addEventListener("mouseleave",()=>{
+
+    botao.style.transform="translate(0,0)";
+  });
+});
+
 
 lucide.createIcons();

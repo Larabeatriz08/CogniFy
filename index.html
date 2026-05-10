@@ -372,7 +372,7 @@
     </div>
 
   </section>
-
+  
   <section class="analytics-section">
 
   <div class="analytics-header">
@@ -457,28 +457,30 @@
         </div>
       </div>
 
-      <div class="bars">
+      <div class="focus-card">
 
-        <div class="bar" style="height:70%"></div>
-        <div class="bar low" style="height:35%"></div>
-        <div class="bar" style="height:58%"></div>
-        <div class="bar" style="height:75%"></div>
-        <div class="bar" style="height:48%"></div>
-        <div class="bar low" style="height:35%"></div>
-        <div class="bar" style="height:76%"></div>
 
-      </div>
+  <div class="bars" id="barsContainer">
+    <div class="bar" style="height:75%"></div>
+    <div class="bar" style="height:45%"></div>
+    <div class="bar" style="height:90%"></div>
+    <div class="bar low" style="height:35%"></div>
+    <div class="bar" style="height:100%"></div>
+    <div class="bar" style="height:60%"></div>
+    <div class="bar" style="height:80%"></div>
+  </div>
 
-      <div class="week">
-        <span>Mon</span>
-        <span>Tue</span>
-        <span>Wed</span>
-        <span>Thu</span>
-        <span>Fri</span>
-        <span>Sat</span>
-        <span>Sun</span>
-      </div>
+  <div class="week" id="weekLabels">
+    <span>Seg</span>
+    <span>Ter</span>
+    <span>Qua</span>
+    <span>Qui</span>
+    <span>Sex</span>
+    <span>Sáb</span>
+    <span>Dom</span>
+  </div>
 
+</div>
     </div>
 
 
@@ -558,7 +560,51 @@
 
 </section>
 
+
+<script>
+const select = document.getElementById("graficoSelect")
+const bars = document.querySelectorAll("#barsContainer .bar")
+const title = document.getElementById("focus-title")
+const subtitle = document.getElementById("focus-subtitle")
+
+const focusData = [75,45,90,35,100,60,80]
+const goalsData = [20,40,55,70,85,95,100]
+
+function atualizarGrafico(tipo){
+
+  const dados = tipo === "focus"
+    ? focusData
+    : goalsData
+
+  bars.forEach((bar,index)=>{
+
+    bar.style.animation = "none"
+    bar.offsetHeight
+
+    bar.style.height = dados[index] + "%"
+    bar.style.animation =
+    "subirBarra 1s cubic-bezier(.16,1,.3,1)"
+
+  })
+
+  if(tipo === "focus"){
+    title.innerText = "Weekly Focus"
+    subtitle.innerText =
+    "Seu nível de produtividade durante a semana"
+  }else{
+    title.innerText = "Goals Progress"
+    subtitle.innerText =
+    "Acompanhe o avanço das suas metas"
+  }
+
+}
+
+select.addEventListener("change",(e)=>{
+  atualizarGrafico(e.target.value)
+})
+</script>
   <script src="script.js"></script>
+
 
 </body>
 </html>
