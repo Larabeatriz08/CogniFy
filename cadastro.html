@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro • CogniFy AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="logo">
+
+      <div class="logo-icon">
+        <i data-lucide="brain"></i>
+      </div>
+
+      CogniFy <span>AI</span>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+      ← Voltar ao site
+    </a>
+
+  </header>
+
+  <main class="main">
+
+    <section class="card">
+
+      <div class="badge">
+
+        <div class="dot"></div>
+
+        Acesso seguro
+
+      </div>
+
+      <h1>Crie sua conta</h1>
+
+      <p>
+        Comece a estudar de forma inteligente em minutos.
+      </p>
+
+      <div class="switch">
+
+        <button onclick="window.location.href='login.html'">
+          Entrar
+        </button>
+
+        <button class="active">
+          Criar conta
+        </button>
+
+      </div>
+
+      <div class="socials">
+
+        <button class="social-btn">
+          G Continuar com Google
+        </button>
+
+        <button class="social-btn">
+           Continuar com Apple
+        </button>
+
+      </div>
+
+      <div class="divider">
+        ou com e-mail
+      </div>
+
+      <div class="input-group">
+
+        <label>Nome completo</label>
+
+        <input
+          type="text"
+          class="input"
+          placeholder="Seu nome"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>E-mail</label>
+
+        <input
+          type="email"
+          class="input"
+          placeholder="voce@email.com"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Senha</label>
+
+        <div class="password">
+
+          <input
+            type="password"
+            class="input"
+            id="senha"
+            placeholder="Mínimo 8 caracteres"
+          >
+
+          <i
+            data-lucide="eye"
+            class="eye"
+            id="toggleSenha"
+          ></i>
+
+        </div>
+
+      </div>
+
+      <div class="terms">
+
+        <input type="checkbox">
+
+        <p>
+          Concordo com os
+          <a href="#">Termos</a>
+          e a
+          <a href="#">Política de Privacidade</a>.
+        </p>
+
+      </div>
+
+      <button class="submit">
+        Criar conta gratuita →
+      </button>
+
+      <div class="bottom-text">
+
+        Já tem conta?
+        <a href="login.html">
+          Entrar
+        </a>
+
+      </div>
+
+    </section>
+
+    <aside class="info-card">
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <div>
+
+          <h3>Cronograma inteligente</h3>
+
+          <p>
+            Sua IA monta a semana ideal em segundos.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          📈
+        </div>
+
+        <div>
+
+          <h3>Desempenho em tempo real</h3>
+
+          <p>
+            Veja seu progresso por matéria e foco.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🧠
+        </div>
+
+        <div>
+
+          <h3>Estudo guiado por IA</h3>
+
+          <p>
+            Recomendações baseadas no seu ritmo.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="chart">
+
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+
+      </div>
+
+      <div class="chart-footer">
+
+        <span>• Foco semanal</span>
+
+        <strong>+24%</strong>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+  <script src="cadastro.js"></script>
+
+</body>
+</html>
