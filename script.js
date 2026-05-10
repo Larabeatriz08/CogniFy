@@ -549,6 +549,137 @@ if(selectGrafico){
 
 }
 
+const mesSelect =
+document.getElementById("mesSelect");
 
+const heatmapGrid =
+document.getElementById("heatmapGrid");
+
+const mesTitulo =
+document.getElementById("mesTitulo");
+
+const metasAtivas =
+document.getElementById("metasAtivas");
+
+const meses = [
+
+  {
+    nome:"Janeiro",
+    metas:"5 metas ativas",
+    dados:[3,1,2,0,1,3,2,1,0,2,1,3,2,2,1,0,1,2,3,1,0]
+  },
+
+  {
+    nome:"Fevereiro",
+    metas:"7 metas ativas",
+    dados:[2,2,1,3,3,2,1,0,1,2,2,3,3,1,1,2,0,1,2,3,1]
+  },
+
+  {
+    nome:"Março",
+    metas:"4 metas ativas",
+    dados:[1,0,1,2,2,1,0,1,1,2,3,1,0,1,2,2,1,0,1,3,2]
+  },
+
+  {
+    nome:"Abril",
+    metas:"9 metas ativas",
+    dados:[3,3,2,1,2,3,3,2,1,2,3,3,1,0,1,2,3,3,2,1,2]
+  },
+
+  {
+    nome:"Maio",
+    metas:"6 metas ativas",
+    dados:[2,1,0,1,2,2,3,1,0,1,2,3,2,1,0,1,2,2,1,3,2]
+  },
+
+  {
+    nome:"Junho",
+    metas:"3 metas ativas",
+    dados:[0,1,1,0,1,2,1,0,1,1,2,1,0,1,2,1,0,1,1,2,1]
+  },
+
+  {
+    nome:"Julho",
+    metas:"8 metas ativas",
+    dados:[3,2,3,2,1,2,3,3,2,1,2,3,2,1,2,3,3,2,1,2,3]
+  },
+
+  {
+    nome:"Agosto",
+    metas:"10 metas ativas",
+    dados:[3,3,3,2,2,3,3,3,2,1,2,3,3,2,2,3,3,1,2,3,3]
+  },
+
+  {
+    nome:"Setembro",
+    metas:"6 metas ativas",
+    dados:[2,1,2,1,0,1,2,2,1,0,1,2,2,1,0,1,2,2,1,3,2]
+  },
+
+  {
+    nome:"Outubro",
+    metas:"8 metas ativas",
+    dados:[3,0,2,2,1,3,2,3,0,1,2,3,3,1,0,2,2,1,3,2,3]
+  },
+
+  {
+    nome:"Novembro",
+    metas:"11 metas ativas",
+    dados:[3,3,2,3,3,2,3,3,1,2,3,3,2,1,3,3,2,3,3,1,2]
+  },
+
+  {
+    nome:"Dezembro",
+    metas:"2 metas ativas",
+    dados:[1,0,0,1,1,0,1,0,0,1,1,0,1,0,0,1,1,0,1,0,0]
+  }
+
+];
+
+function renderHeatmap(index){
+
+  const mes = meses[index];
+
+  mesTitulo.innerText =
+  mes.nome;
+
+  metasAtivas.innerText =
+  mes.metas;
+
+  heatmapGrid.innerHTML = "";
+
+  mes.dados.forEach(nivel => {
+
+    const bloco =
+    document.createElement("div");
+
+    bloco.classList.add("heat");
+
+    if(nivel === 1){
+      bloco.classList.add("low");
+    }
+
+    if(nivel === 2){
+      bloco.classList.add("medium");
+    }
+
+    if(nivel === 3){
+      bloco.classList.add("active");
+    }
+
+    heatmapGrid.appendChild(bloco);
+
+  });
+
+}
+
+mesSelect.addEventListener("change",(e)=>{
+
+  renderHeatmap(e.target.value);
+
+});
+
+renderHeatmap(9);
 
 lucide.createIcons();

@@ -494,6 +494,28 @@ nav{
 }
 
 
+.mes-select{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.08);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 14px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.mes-select:hover{
+  border-color: rgba(181,140,255,.5);
+  background: rgba(255,255,255,.03);
+}
+
+.mes-select option{
+  background: #0f172f;
+  color: white;
+}
 
 .linha{
   position:absolute;
