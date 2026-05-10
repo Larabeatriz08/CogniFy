@@ -375,5 +375,311 @@ featureCards.forEach(card => {
 
 });
 
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("active");
+    }
+  });
+
+}, {
+  threshold:0.2
+});
+
+revealElements.forEach(el => {
+  revealObserver.observe(el);
+});
+
+
+const numerosDashboard =
+document.querySelectorAll(".numero-dashboard");
+
+const observerNumeros =
+new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      const numero =
+      entry.target;
+
+      const alvo =
+      +numero.dataset.target;
+
+      let atual = 0;
+
+      const incremento =
+      alvo / 50;
+
+      const animar = () => {
+
+        atual += incremento;
+
+        if(atual < alvo){
+
+          numero.innerText =
+          Math.floor(atual);
+
+          requestAnimationFrame(animar);
+
+        } else {
+
+          numero.innerText =
+          alvo;
+
+        }
+      };
+
+      animar();
+
+      observerNumeros.unobserve(numero);
+    }
+
+  });
+
+}, {
+  threshold:0.5
+});
+
+numerosDashboard.forEach(numero => {
+  observerNumeros.observe(numero);
+});
+
+const botoes=document.querySelectorAll("button");
+
+botoes.forEach(botao=>{
+
+  botao.addEventListener("mousemove",(e)=>{
+
+    const rect=botao.getBoundingClientRect();
+
+    const x=e.clientX-rect.left-rect.width/2;
+    const y=e.clientY-rect.top-rect.height/2;
+
+    botao.style.transform=
+    `translate(${x*0.15}px,${y*0.15}px)`;
+  });
+
+  botao.addEventListener("mouseleave",()=>{
+
+    botao.style.transform="translate(0,0)";
+  });
+});
+
+const selectGrafico =
+document.getElementById("graficoSelect");
+
+if(selectGrafico){
+
+  const barras =
+  document.querySelectorAll(".bar");
+
+  const tituloGrafico =
+  document.getElementById("foco-titulo");
+
+  const subtituloGrafico =
+  document.getElementById("foco-subtitulo");
+
+  const dados = {
+
+    foco:{
+      titulo:"Foco semanal",
+      subtitulo:"Últimos 7 dias",
+
+      alturas:[
+        "85%",
+        "45%",
+        "70%",
+        "78%",
+        "92%",
+        "88%",
+        "65%"
+      ]
+    },
+
+    metas:{
+      titulo:"Metas concluídas",
+      subtitulo:"Performance da semana",
+
+      alturas:[
+        "40%",
+        "62%",
+        "55%",
+        "80%",
+        "72%",
+        "95%",
+        "90%"
+      ]
+    }
+  };
+
+  selectGrafico.addEventListener("change",(e)=>{
+
+    const tipo = e.target.value;
+
+    tituloGrafico.innerText =
+    dados[tipo].titulo;
+
+    subtituloGrafico.innerText =
+    dados[tipo].subtitulo;
+
+    barras.forEach((barra,index)=>{
+
+      barra.style.animation =
+      "none";
+
+      void barra.offsetWidth;
+
+      barra.style.height =
+      dados[tipo].alturas[index];
+
+      barra.style.animation =
+      "subirBarra 1s ease";
+    });
+
+  });
+
+}
+
+const mesSelect =
+document.getElementById("mesSelect");
+
+const heatmapGrid =
+document.getElementById("heatmapGrid");
+
+const mesTitulo =
+document.getElementById("mesTitulo");
+
+const metasAtivas =
+document.getElementById("metasAtivas");
+
+const meses = [
+
+  {
+    nome:"Janeiro",
+    metas:"5 metas ativas",
+    dados:[3,1,2,0,1,3,2,1,0,2,1,3,2,2,1,0,1,2,3,1,0]
+  },
+
+  {
+    nome:"Fevereiro",
+    metas:"7 metas ativas",
+    dados:[2,2,1,3,3,2,1,0,1,2,2,3,3,1,1,2,0,1,2,3,1]
+  },
+
+  {
+    nome:"Março",
+    metas:"4 metas ativas",
+    dados:[1,0,1,2,2,1,0,1,1,2,3,1,0,1,2,2,1,0,1,3,2]
+  },
+
+  {
+    nome:"Abril",
+    metas:"9 metas ativas",
+    dados:[3,3,2,1,2,3,3,2,1,2,3,3,1,0,1,2,3,3,2,1,2]
+  },
+
+  {
+    nome:"Maio",
+    metas:"6 metas ativas",
+    dados:[2,1,0,1,2,2,3,1,0,1,2,3,2,1,0,1,2,2,1,3,2]
+  },
+
+  {
+    nome:"Junho",
+    metas:"3 metas ativas",
+    dados:[0,1,1,0,1,2,1,0,1,1,2,1,0,1,2,1,0,1,1,2,1]
+  },
+
+  {
+    nome:"Julho",
+    metas:"8 metas ativas",
+    dados:[3,2,3,2,1,2,3,3,2,1,2,3,2,1,2,3,3,2,1,2,3]
+  },
+
+  {
+    nome:"Agosto",
+    metas:"10 metas ativas",
+    dados:[3,3,3,2,2,3,3,3,2,1,2,3,3,2,2,3,3,1,2,3,3]
+  },
+
+  {
+    nome:"Setembro",
+    metas:"6 metas ativas",
+    dados:[2,1,2,1,0,1,2,2,1,0,1,2,2,1,0,1,2,2,1,3,2]
+  },
+
+  {
+    nome:"Outubro",
+    metas:"8 metas ativas",
+    dados:[3,0,2,2,1,3,2,3,0,1,2,3,3,1,0,2,2,1,3,2,3]
+  },
+
+  {
+    nome:"Novembro",
+    metas:"11 metas ativas",
+    dados:[3,3,2,3,3,2,3,3,1,2,3,3,2,1,3,3,2,3,3,1,2]
+  },
+
+  {
+    nome:"Dezembro",
+    metas:"2 metas ativas",
+    dados:[1,0,0,1,1,0,1,0,0,1,1,0,1,0,0,1,1,0,1,0,0]
+  }
+
+];
+
+function renderHeatmap(index){
+
+  const mes = meses[index];
+
+  mesTitulo.innerText =
+  mes.nome;
+
+  metasAtivas.innerText =
+  mes.metas;
+
+  heatmapGrid.innerHTML = "";
+
+  mes.dados.forEach(nivel => {
+
+    const bloco =
+    document.createElement("div");
+
+    bloco.classList.add("heat");
+
+    if(nivel === 1){
+      bloco.classList.add("low");
+    }
+
+    if(nivel === 2){
+      bloco.classList.add("medium");
+    }
+
+    if(nivel === 3){
+      bloco.classList.add("active");
+    }
+
+    heatmapGrid.appendChild(bloco);
+
+  });
+
+}
+
+mesSelect.addEventListener("change",(e)=>{
+
+  renderHeatmap(e.target.value);
+
+});
+
+renderHeatmap(9);
 
 lucide.createIcons();

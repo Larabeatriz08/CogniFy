@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -56,12 +57,12 @@
       </div>
 
       <h1 class="titulo-hero">
-      Estude com uma IA que entende
-      <span class="typing-wrapper">
-        <span id="typing-word"></span>
-        <span class="cursor">|</span>
-  </span>
-</h1>
+        Estude com uma IA que entende
+        <span class="typing-wrapper">
+          <span id="typing-word"></span>
+          <span class="cursor">|</span>
+        </span>
+      </h1>
 
       <p class="descricao">
         Cognify organiza sua rotina, gera cronogramas inteligentes e acompanha seu desempenho — tudo em um espaço calmo e feito para focar.
@@ -373,7 +374,190 @@
 
   </section>
 
+  <section class="analytics-section">
+
+    <div class="analytics-header">
+
+      <small>DASHBOARD</small>
+
+      <h2>
+        Seu progresso, em um só lugar
+      </h2>
+
+      <p>
+        Métricas claras, calendário inteligente e insights gerados pela IA.
+      </p>
+
+    </div>
+
+ 
+    <div class="analytics-container">
+
+      <div class="metrics-grid">
+
+        <div class="metric-card reveal">
+          <i data-lucide="clock-3"></i>
+
+          <div class="metric-top">
+            <h3 class="numero-dashboard" data-target="184">0</h3>
+            <span>+12%</span>
+          </div>
+
+          <p>Horas estudadas</p>
+        </div>
+
+        <div class="metric-card reveal">
+          <i data-lucide="check-circle-2"></i>
+
+          <div class="metric-top">
+            <h3 class="numero-dashboard" data-target="47">0</h3>
+            <span>+8%</span>
+          </div>
+
+          <p>Tarefas concluídas</p>
+        </div>
+
+        <div class="metric-card reveal">
+          <i data-lucide="target"></i>
+
+          <div class="metric-top">
+            <h3 class="numero-dashboard" data-target="28">0</h3>
+            <span>+4</span>
+          </div>
+
+          <p>Streak (dias)</p>
+        </div>
+
+        <div class="metric-card reveal">
+          <i data-lucide="trending-up"></i>
+
+          <div class="metric-top">
+            <h3 class="numero-dashboard" data-target="92">0</h3>
+            <span>+6</span>
+          </div>
+
+          <p>Score IA</p>
+        </div>
+
+      </div>
+
+    
+      <div class="focus-card reveal">
+
+        <div class="focus-header">
+
+          <div>
+            <h3 id="foco-titulo">Foco semanal</h3>
+            <p id="foco-subtitulo">Últimos 7 dias</p>
+          </div>
+
+          <select id="graficoSelect" class="grafico-select">
+            <option value="foco">Foco semanal</option>
+            <option value="metas">Metas</option>
+          </select>
+
+        </div>
+
+        <div class="bars" id="barsContainer">
+
+          <div class="bar" style="height:75%"></div>
+          <div class="bar" style="height:45%"></div>
+          <div class="bar" style="height:90%"></div>
+          <div class="bar low" style="height:35%"></div>
+          <div class="bar" style="height:100%"></div>
+          <div class="bar" style="height:60%"></div>
+          <div class="bar" style="height:80%"></div>
+
+        </div>
+
+        <div class="week">
+          <span>Seg</span>
+          <span>Ter</span>
+          <span>Qua</span>
+          <span>Qui</span>
+          <span>Sex</span>
+          <span>Sáb</span>
+          <span>Dom</span>
+        </div>
+
+      </div>
+
+    
+      <div class="insight-card reveal">
+
+        <div class="insight-title">
+
+          <div class="insight-icon">
+            <i data-lucide="sparkles"></i>
+          </div>
+
+          <h3>AI Insight</h3>
+
+        </div>
+
+        <p>
+          Seu pico de foco é entre <strong>9h e 11h</strong>.
+          Movemos seus estudos de cálculo para esse horário esta semana.
+        </p>
+
+        <div class="next-session">
+
+          <div>
+            <small>PRÓXIMA SESSÃO</small>
+            <h4>Cálculo - Cap. 5</h4>
+          </div>
+
+          <span>em 23 min</span>
+
+        </div>
+
+        <a href="#">
+          Ver mais insights →
+        </a>
+
+      </div>
+
+   
+    <div class="heatmap-card reveal">
+
+  <div class="heatmap-header">
+
+    <div>
+      <h3 id="mesTitulo">Outubro</h3>
+      <span id="metasAtivas">8 metas ativas</span>
+    </div>
+
+    <select id="mesSelect" class="mes-select">
+      <option value="0">Janeiro</option>
+      <option value="1">Fevereiro</option>
+      <option value="2">Março</option>
+      <option value="3">Abril</option>
+      <option value="4">Maio</option>
+      <option value="5">Junho</option>
+      <option value="6">Julho</option>
+      <option value="7">Agosto</option>
+      <option value="8">Setembro</option>
+      <option value="9" selected>Outubro</option>
+      <option value="10">Novembro</option>
+      <option value="11">Dezembro</option>
+    </select>
+
+  </div>
+
+  <div class="heatmap-grid" id="heatmapGrid"></div>
+
+</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
   <script src="script.js"></script>
 
 </body>
 </html>
+
