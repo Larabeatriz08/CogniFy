@@ -17,7 +17,7 @@ Desenvolvido utilizando apenas:
 </div>
 
 
-O foco principal do projeto é criar uma experiência visual premium, moderna e totalmente responsiva.
+O foco principal do projeto é criar uma experiência visual premium, moderna e totalmente limpa.
 
 
 
@@ -26,7 +26,6 @@ O foco principal do projeto é criar uma experiência visual premium, moderna e 
 <div>
   <ul>
     <li>Landing page moderna estilo SaaS</li>
-    <li>Layout 100% responsivo</li>
     <li>Scroll suave</li>
     <li>Cards interativos</li>
     <li>Dashboard visual moderna</li>
