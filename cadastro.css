@@ -131,8 +131,6 @@ body::before{
   margin-bottom:38px;
 }
 
-/* SWITCH */
-
 .switch{
   display:flex;
   background:rgba(255,255,255,.04);
@@ -168,39 +166,34 @@ body::before{
   0 10px 30px rgba(139,92,246,.25);
 }
 
-/* SOCIALS */
-
 .socials{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:18px;
   margin-bottom:34px;
+  width:100%;
 }
 
 .social-btn{
+  width:100%;
   height:82px;
   border-radius:24px;
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  background:
-  rgba(255,255,255,.03);
-
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
   color:white;
   font-size:1rem;
   font-weight:600;
-
   display:flex;
   align-items:center;
   justify-content:center;
   gap:14px;
-
+  padding:0 24px;
   cursor:pointer;
   transition:.3s ease;
-
   position:relative;
   overflow:hidden;
 }
+
 
 .social-btn::before{
   content:"";
@@ -235,21 +228,22 @@ body::before{
   0 10px 30px rgba(139,92,246,.15);
 }
 
-/* ICONES */
-
 .social-btn i,
 .social-btn svg{
   width:24px;
   height:24px;
   flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  top:-1px;
 }
 
 .google-icon{
-  color:#ff4b3e;
+  color:#ffffff;
   font-size:1.4rem;
 }
-
-/* DIVIDER */
 
 .divider{
   display:flex;
@@ -267,7 +261,6 @@ body::before{
   background:rgba(255,255,255,.08);
 }
 
-/* INPUTS */
 
 .input-group input{
   width:100%;
@@ -358,7 +351,6 @@ body::before{
   text-decoration:none;
 }
 
-/* CARD INFO */
 
 .info-card{
   width:560px;
@@ -423,8 +415,6 @@ body::before{
   font-weight:400;
 }
 
-/* GRAFICO */
-
 .chart{
   margin-top:30px;
   height:220px;
@@ -480,28 +470,22 @@ body::before{
   font-size:14px;
 }
 
-/* CARD LOGIN */
-
 .cadastro-card{
   width:650px;
   padding:56px;
   border-radius:34px;
   position:relative;
   overflow:hidden;
-
   background:
   linear-gradient(
     180deg,
     rgba(255,255,255,0.06),
     rgba(255,255,255,0.03)
   );
-
   border:
   1px solid rgba(255,255,255,0.08);
-
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
-
   box-shadow:
   0 25px 80px rgba(0,0,0,.45);
 }
@@ -519,7 +503,6 @@ body::before{
   pointer-events:none;
 }
 
-/* ANIMAÇÕES */
 
 @keyframes grow{
   from{
