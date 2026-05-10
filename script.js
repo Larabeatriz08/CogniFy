@@ -1,16 +1,6 @@
 const botaoComecar =
 document.querySelector(".primario-btn");
 
-botaoComecar.addEventListener("click", () => {
-
-  alert(
-    "Bem-vindo ao CogniFy - Seu aprendizado com inteligência!"
-  );
-
-});
-
-
-
 const palavras = [
   "sua rotina.",
   "seus objetivos.",
@@ -763,7 +753,6 @@ if(faqAberto){
   faqAberto.querySelector(".faq-btn")
   .innerText = "−";
 }
-
 
 
 const linksMenu = document.querySelectorAll(".menu a");

@@ -128,12 +128,6 @@ body::after{
   padding:40px;
 }
 
-.auth-card,
-.preview-card{
-  width:650px;
-  min-height:760px;
-}
-
 .auth-card{
   width:650px;
   min-height:760px;
@@ -147,13 +141,12 @@ body::after{
     rgba(255,255,255,.06),
     rgba(255,255,255,.03)
   );
-  border:
-  1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
   backdrop-filter:blur(22px);
   -webkit-backdrop-filter:blur(22px);
-  box-shadow:
-  0 25px 80px rgba(0,0,0,.45);
+  box-shadow:0 25px 80px rgba(0,0,0,.45);
 }
+
 
 .auth-card::before{
   content:"";
@@ -167,26 +160,29 @@ body::after{
   );
   pointer-events:none;
 }
-
 .preview-card{
-  width:650px;
-  padding:56px;
+  width:560px;
+  height:680px; 
+  padding:42px;
   border-radius:34px;
   position:relative;
   overflow:hidden;
   background:
   linear-gradient(
     180deg,
-    rgba(255,255,255,0.06),
-    rgba(255,255,255,0.03)
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.025)
   );
-  border:
-  1px solid rgba(255,255,255,0.08);
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
   box-shadow:
-  0 25px 80px rgba(0,0,0,.45);
+  0 25px 80px rgba(0,0,0,.4);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
+
 
 .preview-card::before{
   content:"";
@@ -511,21 +507,20 @@ body::after{
 }
 
 .chart-box{
-  margin-top:40px;
-  height:290px;
-  border-radius:34px;
+  margin-top:28px;
+  height:240px; 
+  border-radius:30px;
   background:
   linear-gradient(
     180deg,
     rgba(255,255,255,.04),
     rgba(255,255,255,.02)
   );
-  border:
-  1px solid rgba(255,255,255,.06);
-  padding:34px;
+  border:1px solid rgba(255,255,255,.06);
+  padding:28px;
   display:flex;
   align-items:flex-end;
-  gap:18px;
+  gap:14px;
   overflow:hidden;
 }
 
@@ -534,12 +529,12 @@ body::after{
   height:100%;
   display:flex;
   align-items:flex-end;
-  gap:18px;
+  gap:14px;
 }
 
 .bars span{
   flex:1;
-  border-radius:16px 16px 10px 10px;
+  border-radius:14px 14px 8px 8px;
   background:
   linear-gradient(
     180deg,
