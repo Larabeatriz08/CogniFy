@@ -38,11 +38,11 @@ body::before{
 }
 
 .logo{
-  display:flex;
+ display:flex;
   align-items:center;
   gap:12px;
-  font-size:1.7rem;
-  font-weight:800;
+  font-size:1.3rem;
+  font-weight:700;
 }
 
 .logo span{
@@ -50,8 +50,8 @@ body::before{
 }
 
 .logo-icon{
-  width:44px;
-  height:44px;
+  width:42px;
+  height:42px;
   border-radius:14px;
   background:
   linear-gradient(
@@ -64,9 +64,20 @@ body::before{
   justify-content:center;
 }
 
-.logo-icon svg{
+.logo strong{
+  color:#a78bfa;
+}
+
+.logo-icon svg,
+.logo-icon i{
   width:22px;
   height:22px;
+}
+
+.subtitle{
+  color:#94a3b8;
+  margin-bottom:30px;
+  font-size:1.05rem;
 }
 
 .back-btn{
@@ -131,27 +142,32 @@ body::before{
   margin-bottom:38px;
 }
 
-.switch{
+.switch{  
   display:flex;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.08);
   border-radius:22px;
   padding:8px;
   margin-bottom:34px;
-  height:88px;
+  gap:0;
 }
+
 
 .switch button{
   flex:1;
+  height:64px;
   border:none;
-  outline:none;
-  border-radius:18px;
-  background:transparent;
-  color:#94a3b8;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
   font-size:1rem;
   font-weight:700;
+  color:#9ca3af;
+  background:transparent;
   cursor:pointer;
-  transition:.3s;
+  transition:.3s ease;
 }
 
 .switch .active{
@@ -163,7 +179,7 @@ body::before{
   );
   color:white;
   box-shadow:
-  0 10px 30px rgba(139,92,246,.25);
+  0 10px 30px rgba(139,92,246,.18);
 }
 
 .socials{
@@ -175,19 +191,19 @@ body::before{
 }
 
 .social-btn{
-  width:100%;
-  height:82px;
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
+  height:78px;
+  border-radius:20px;
+  border:
+  1px solid rgba(255,255,255,.08);
+  background:
+  rgba(255,255,255,.03);
   color:white;
   font-size:1rem;
   font-weight:600;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:14px;
-  padding:0 24px;
+  gap:12px;
   cursor:pointer;
   transition:.3s ease;
   position:relative;
@@ -286,6 +302,7 @@ body::before{
   display:block;
   margin-bottom:12px;
   color:#d1d5db;
+  font-size:.95rem;
 }
 
 .input{
@@ -295,7 +312,7 @@ body::before{
   border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.04);
   padding:0 22px;
-  color:white;
+  color:#d1d5db;
   outline:none;
 }
 
@@ -309,6 +326,7 @@ body::before{
   top:50%;
   transform:translateY(-50%);
   cursor:pointer;
+  color:#94a3b8;
 }
 
 .terms{
