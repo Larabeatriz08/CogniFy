@@ -495,13 +495,13 @@ if(selectGrafico){
       subtitulo:"Últimos 7 dias",
 
       alturas:[
-        "85%",
-        "45%",
-        "70%",
-        "78%",
-        "92%",
-        "88%",
-        "65%"
+        85,
+        45,
+        70,
+        78,
+        92,
+        88,
+        65
       ]
     },
 
@@ -510,28 +510,40 @@ if(selectGrafico){
       subtitulo:"Performance da semana",
 
       alturas:[
-        "40%",
-        "62%",
-        "55%",
-        "80%",
-        "72%",
-        "95%",
-        "90%"
+        40,
+        62,
+        55,
+        80,
+        72,
+        95,
+        90
       ]
     }
   };
 
-  selectGrafico.addEventListener("change",(e)=>{
+  function atualizarGrafico(tipo){
 
-    const tipo = e.target.value;
+    const info =
+    dados[tipo];
 
     tituloGrafico.innerText =
-    dados[tipo].titulo;
+    info.titulo;
 
     subtituloGrafico.innerText =
-    dados[tipo].subtitulo;
+    info.subtitulo;
+
+    const menorValor =
+    Math.min(...info.alturas);
 
     barras.forEach((barra,index)=>{
+
+      barra.classList.remove("low");
+
+      if(
+        info.alturas[index] === menorValor
+      ){
+        barra.classList.add("low");
+      }
 
       barra.style.animation =
       "none";
@@ -539,15 +551,25 @@ if(selectGrafico){
       void barra.offsetWidth;
 
       barra.style.height =
-      dados[tipo].alturas[index];
+      info.alturas[index] + "%";
 
       barra.style.animation =
       "subirBarra 1s ease";
     });
 
-  });
+  }
+
+  selectGrafico.addEventListener(
+    "change",
+    (e)=>{
+      atualizarGrafico(e.target.value);
+    }
+  );
+
+  atualizarGrafico("foco");
 
 }
+
 
 const mesSelect =
 document.getElementById("mesSelect");
@@ -681,5 +703,49 @@ mesSelect.addEventListener("change",(e)=>{
 });
 
 renderHeatmap(9);
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+
+  const botao =
+  item.querySelector(".faq-btn");
+
+  botao.addEventListener("click", () => {
+
+    const aberto =
+    item.classList.contains("active");
+
+    faqItems.forEach(faq => {
+
+      faq.classList.remove("active");
+
+      const resposta =
+      faq.querySelector(".faq-answer");
+
+      const icone =
+      faq.querySelector(".faq-btn");
+
+      resposta.style.maxHeight = null;
+
+      icone.innerText = "+";
+    });
+
+    if(!aberto){
+
+      item.classList.add("active");
+
+      const resposta =
+      item.querySelector(".faq-answer");
+
+      resposta.style.maxHeight =
+      resposta.scrollHeight + "px";
+
+      botao.innerText = "−";
+    }
+
+  });
+
+});
 
 lucide.createIcons();
