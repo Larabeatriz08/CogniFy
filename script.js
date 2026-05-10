@@ -764,4 +764,58 @@ if(faqAberto){
   .innerText = "−";
 }
 
+
+
+const linksMenu = document.querySelectorAll(".menu a");
+
+linksMenu.forEach(link => {
+
+  link.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    const texto = link.innerText.toLowerCase();
+
+    let destino = null;
+
+    if(texto.includes("features")){
+
+      destino =
+      document.querySelector(".features-section");
+
+    }
+
+    else if(texto.includes("dashboard")){
+
+      destino =
+      document.querySelector(".dashboard-section");
+
+    }
+
+    else if(texto.includes("sobre")){
+
+      destino =
+      document.querySelector(".analytics-section");
+
+    }
+
+    else if(texto.includes("faq")){
+
+      destino =
+      document.querySelector(".faq-section");
+
+    }
+
+    if(destino){
+
+      destino.scrollIntoView({
+        behavior:"smooth"
+      });
+
+    }
+
+  });
+
+});
+
 lucide.createIcons();
