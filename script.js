@@ -474,5 +474,81 @@ botoes.forEach(botao=>{
   });
 });
 
+const selectGrafico =
+document.getElementById("graficoSelect");
+
+if(selectGrafico){
+
+  const barras =
+  document.querySelectorAll(".bar");
+
+  const tituloGrafico =
+  document.getElementById("foco-titulo");
+
+  const subtituloGrafico =
+  document.getElementById("foco-subtitulo");
+
+  const dados = {
+
+    foco:{
+      titulo:"Foco semanal",
+      subtitulo:"Últimos 7 dias",
+
+      alturas:[
+        "85%",
+        "45%",
+        "70%",
+        "78%",
+        "92%",
+        "88%",
+        "65%"
+      ]
+    },
+
+    metas:{
+      titulo:"Metas concluídas",
+      subtitulo:"Performance da semana",
+
+      alturas:[
+        "40%",
+        "62%",
+        "55%",
+        "80%",
+        "72%",
+        "95%",
+        "90%"
+      ]
+    }
+  };
+
+  selectGrafico.addEventListener("change",(e)=>{
+
+    const tipo = e.target.value;
+
+    tituloGrafico.innerText =
+    dados[tipo].titulo;
+
+    subtituloGrafico.innerText =
+    dados[tipo].subtitulo;
+
+    barras.forEach((barra,index)=>{
+
+      barra.style.animation =
+      "none";
+
+      void barra.offsetWidth;
+
+      barra.style.height =
+      dados[tipo].alturas[index];
+
+      barra.style.animation =
+      "subirBarra 1s ease";
+    });
+
+  });
+
+}
+
+
 
 lucide.createIcons();

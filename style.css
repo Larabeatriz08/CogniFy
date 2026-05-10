@@ -431,6 +431,70 @@ nav{
   overflow:hidden;
 }
 
+.switch-grafico{
+  display:flex;
+  gap:12px;
+}
+
+.grafico-btn{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:#9ea6c3;
+  padding:10px 18px;
+  border-radius:40px;
+  cursor:pointer;
+  transition:.3s ease;
+  font-size:15px;
+}
+
+.grafico-btn:hover{
+  border-color:rgba(181,140,255,.35);
+  color:white;
+}
+
+.grafico-btn.ativo{
+  background:rgba(181,140,255,.15);
+  color:#b58cff;
+  border-color:rgba(181,140,255,.35);
+  box-shadow:
+  0 0 20px rgba(181,140,255,.15);
+}
+
+
+.grafico-select{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all .25s ease;
+
+  min-width: 170px;
+  height: 48px;
+}
+
+.grafico-select:hover{
+  border-color: rgba(181,140,255,0.35);
+  background: rgba(255,255,255,0.05);
+}
+
+.grafico-select:focus{
+  border-color: #b58cff;
+  box-shadow: 0 0 0 4px rgba(181,140,255,0.12);
+}
+
+.grafico-select option{
+  background: #0f172f;
+  color: white;
+}
+
+
+
 .linha{
   position:absolute;
   width:100%;
@@ -458,7 +522,6 @@ nav{
   100% 100%,
   0% 100%
   );
-
   animation:graficoAnimado 5s ease-in-out infinite;
 }
 
@@ -644,7 +707,6 @@ nav{
   transform:translateX(-120%);
   animation:glassMove 5s linear infinite;
 }
-
 
 
 .ai-popup .icon{
