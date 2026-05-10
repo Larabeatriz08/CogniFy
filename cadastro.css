@@ -27,6 +27,13 @@ body::before{
   pointer-events:none;
 }
 
+.cadastro-card h1 {
+  font-size:3rem;
+  margin-bottom:10px;
+  line-height:1.1;
+}
+
+
 .topbar{
   width:100%;
   padding:24px 36px;
@@ -43,10 +50,6 @@ body::before{
   gap:12px;
   font-size:1.3rem;
   font-weight:700;
-}
-
-.logo span{
-  color:#b388ff;
 }
 
 .logo-icon{
@@ -185,9 +188,8 @@ body::before{
 .socials{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-bottom:34px;
-  width:100%;
+  gap:16px;
+  margin-bottom:32px;
 }
 
 .social-btn{
@@ -246,14 +248,9 @@ body::before{
 
 .social-btn i,
 .social-btn svg{
-  width:24px;
-  height:24px;
+  width:22px;
+  height:22px;
   flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  top:-1px;
 }
 
 .google-icon{
@@ -399,9 +396,7 @@ body::before{
   min-width:48px;
   width:48px;
   height:48px;
-
   border-radius:16px;
-
   background:
   linear-gradient(
     135deg,
@@ -412,9 +407,7 @@ body::before{
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:1.1rem;
-
   flex-shrink:0;
 }
 
