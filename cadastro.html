@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,6 +7,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
@@ -38,14 +39,11 @@
 
   <main class="main">
 
-    <section class="card">
+    <section class="cadastro-card">
 
       <div class="badge">
-
         <div class="dot"></div>
-
         Acesso seguro
-
       </div>
 
       <h1>Crie sua conta</h1>
@@ -66,17 +64,19 @@
 
       </div>
 
-      <div class="socials">
+        <div class="socials">
 
         <button class="social-btn">
-          G Continuar com Google
+            <i class="fa-brands fa-google"></i>
+            <span>Continuar com Google</span>
         </button>
 
         <button class="social-btn">
-           Continuar com Apple
+            <i class="fa-brands fa-apple"></i>
+            <span>Continuar com Apple</span>
         </button>
 
-      </div>
+        </div>
 
       <div class="divider">
         ou com e-mail
@@ -89,8 +89,7 @@
         <input
           type="text"
           class="input"
-          placeholder="Seu nome"
-        >
+          placeholder="Seu nome">
 
       </div>
 
@@ -101,8 +100,7 @@
         <input
           type="email"
           class="input"
-          placeholder="voce@email.com"
-        >
+          placeholder="voce@email.com">
 
       </div>
 
@@ -116,14 +114,13 @@
             type="password"
             class="input"
             id="senha"
-            placeholder="Mínimo 8 caracteres"
-          >
+            placeholder="Mínimo 8 caracteres">
 
           <i
             data-lucide="eye"
             class="eye"
-            id="toggleSenha"
-          ></i>
+            id="toggleSenha">
+          </i>
 
         </div>
 
@@ -149,6 +146,7 @@
       <div class="bottom-text">
 
         Já tem conta?
+
         <a href="login.html">
           Entrar
         </a>
@@ -166,13 +164,11 @@
         </div>
 
         <div>
-
           <h3>Cronograma inteligente</h3>
 
           <p>
             Sua IA monta a semana ideal em segundos.
           </p>
-
         </div>
 
       </div>
@@ -184,13 +180,11 @@
         </div>
 
         <div>
-
           <h3>Desempenho em tempo real</h3>
 
           <p>
             Veja seu progresso por matéria e foco.
           </p>
-
         </div>
 
       </div>
@@ -202,13 +196,11 @@
         </div>
 
         <div>
-
           <h3>Estudo guiado por IA</h3>
 
           <p>
             Recomendações baseadas no seu ritmo.
           </p>
-
         </div>
 
       </div>
@@ -236,6 +228,10 @@
     </aside>
 
   </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
 
   <script src="cadastro.js"></script>
 
