@@ -712,6 +712,9 @@ faqItems.forEach(item => {
   const pergunta =
   item.querySelector(".faq-question");
 
+  const botao =
+  item.querySelector(".faq-btn");
+
   pergunta.addEventListener("click", () => {
 
     const aberto =
@@ -723,6 +726,9 @@ faqItems.forEach(item => {
 
       el.querySelector(".faq-answer")
       .style.maxHeight = null;
+
+      el.querySelector(".faq-btn")
+      .innerText = "+";
 
     });
 
@@ -736,10 +742,26 @@ faqItems.forEach(item => {
       resposta.style.maxHeight =
       resposta.scrollHeight + "px";
 
+      botao.innerText = "−";
     }
 
   });
 
 });
+
+const faqAberto =
+document.querySelector(".faq-item.open");
+
+if(faqAberto){
+
+  const resposta =
+  faqAberto.querySelector(".faq-answer");
+
+  resposta.style.maxHeight =
+  resposta.scrollHeight + "px";
+
+  faqAberto.querySelector(".faq-btn")
+  .innerText = "−";
+}
 
 lucide.createIcons();
