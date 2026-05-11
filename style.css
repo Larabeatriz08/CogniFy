@@ -47,7 +47,8 @@ nav{
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:30px;
+  font-size:clamp(18px, 2vw, 30px);
+  font-size:clamp(18px, 2vw, 30px);
   font-weight:bold;
 }
 
@@ -1674,11 +1675,8 @@ nav{
   }
 }
 
-/* =========================
-   RESPONSIVIDADE TOTAL
-========================= */
 
-/* NOTEBOOK */
+
 @media (max-width: 1200px){
 
   .hero h1{
@@ -1708,7 +1706,7 @@ nav{
 
 }
 
-/* TABLET */
+
 @media (max-width: 992px){
 
   .menu{
@@ -1771,56 +1769,82 @@ nav{
 
 }
 
-/* MOBILE GERAL */
-@media (max-width: 768px){
+
+@media (max-width: 767px){
+
+  body{
+    overflow-x:hidden;
+  }
 
   .container{
     width:92%;
   }
 
   nav{
-    padding:12px 16px;
-    border-radius:24px;
+    padding:10px 14px;
+    border-radius:22px;
+    overflow:hidden;
   }
 
   .nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
     gap:10px;
   }
 
+  .menu{
+    display:none;
+  }
+
   .logo{
-    font-size:22px;
+    display:flex;
+    align-items:center;
     gap:8px;
+    font-size:16px;
+    min-width:0;
+  }
+
+  .logo h2{
+    font-size:16px;
+    white-space:nowrap;
   }
 
   .logo-icon{
-    width:36px;
-    height:36px;
+    width:34px;
+    height:34px;
+    flex-shrink:0;
   }
 
   .nav-btn{
-    padding:12px 20px;
-    font-size:15px;
+    padding:10px 14px;
+    font-size:13px;
+    white-space:nowrap;
+    flex-shrink:0;
   }
 
   .hero{
-    padding-top:70px;
-  }
-
-  .badge{
-    font-size:12px;
-    padding:8px 14px;
+    padding:70px 0 50px;
   }
 
   .hero h1{
     font-size:42px;
-    line-height:1.05;
-    letter-spacing:-2px;
+    line-height:1.1;
+    letter-spacing:-1px;
+    max-width:100%;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  #typing-word{
+    white-space:normal;
+    word-break:break-word;
   }
 
   .descricao{
-    font-size:20px;
-    line-height:1.6;
-    margin-top:28px;
+    font-size:18px;
+    line-height:1.7;
+    padding:0 4px;
   }
 
   .buttons{
@@ -1831,103 +1855,88 @@ nav{
   .primario-btn,
   .secundario-btn{
     width:100%;
-    max-width:320px;
-    height:62px;
+    max-width:260px;
     font-size:18px;
-    padding:0 20px;
+    padding:18px 22px;
   }
 
-  .stats{
-    flex-direction:column;
-    gap:24px;
+  .stats-grid,
+  .metrics-grid,
+  .features-grid{
+    grid-template-columns:1fr;
   }
 
-  .stat h2{
-    font-size:32px;
-  }
-
-  .stat p{
-    font-size:18px;
-  }
-
-  .dashboard-container,
-  .feature-card,
-  .metric-card,
+  .grafico-card,
   .focus-card,
   .insight-card,
-  .heatmap-card,
-  .faq-item,
-  .cta-card{
-    padding:24px;
-    border-radius:24px;
-  }
-
-  .hero-text h1{
-    font-size:24px;
-  }
-
-  .grafico-card{
-    height:auto;
+  .heatmap-card{
+    padding:22px;
+    overflow:hidden;
   }
 
   .grafico{
     height:180px;
+    overflow:hidden;
   }
 
-  .bars{
-    gap:12px;
-    height:220px;
+  .linha{
+    height:100px;
+    bottom:28px;
   }
 
-  .bar{
-    border-radius:14px 14px 0 0;
+  .dias{
+    font-size:11px;
   }
 
-  .feature-card h3{
-    font-size:28px;
+  .heatmap-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
   }
 
-  .feature-card p{
-    font-size:18px;
+  .heat{
+    width:100%;
+    height:60px;
+    border-radius:16px;
+  }
+
+  .faq-item{
+    padding:22px;
+  }
+
+  .faq-question{
+    gap:14px;
+    align-items:center;
+  }
+
+  .faq-question h3{
+    font-size:16px;
+    line-height:1.4;
+    flex:1;
+  }
+
+  .faq-btn{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    min-height:48px;
+    border-radius:50%;
+    flex-shrink:0;
   }
 
   .features-header h2,
   .analytics-header h2,
   .faq-header h2,
   .cta-card h2{
-    font-size:40px;
+    font-size:42px;
     line-height:1.1;
   }
 
   .features-header p,
   .analytics-header p,
-  .cta-card p{
-    font-size:18px;
-  }
-
-  .metric-top h3{
-    font-size:42px;
-  }
-
+  .cta-card p,
+  .feature-card p,
   .insight-card p{
-    font-size:20px;
-  }
-
-  .next-session h4{
-    font-size:26px;
-  }
-
-  .next-session span{
-    font-size:20px;
-  }
-
-  .heat{
-    height:80px;
-  }
-
-  .faq-question h3{
     font-size:18px;
-    max-width:80%;
   }
 
   .footer{
@@ -1938,62 +1947,5 @@ nav{
   .footer-links{
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
   }
-
-}
-
-
-@media (max-width: 480px){
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .descricao{
-    font-size:16px;
-  }
-
-  .features-header h2,
-  .analytics-header h2,
-  .faq-header h2,
-  .cta-card h2{
-    font-size:30px;
-  }
-
-  .feature-card h3{
-    font-size:24px;
-  }
-
-  .metric-top h3{
-    font-size:34px;
-  }
-
-  .hero-text h1{
-    font-size:20px;
-  }
-
-  .cta-buttons{
-    flex-direction:column;
-  }
-
-  .cta-primario,
-  .cta-secundario{
-    width:100%;
-  }
-
-  .grafico-select,
-  .mes-select{
-    width:100%;
-  }
-
-  .heatmap-grid{
-    gap:8px;
-  }
-
-  .heat{
-    height:60px;
-    border-radius:12px;
-  }
-
 }
