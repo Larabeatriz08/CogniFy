@@ -66,6 +66,10 @@ cd Cognify
 
 # Execute o index.html
 ```
+## Deploy Online
+
+[Visitar projeto](https://cogni-fy-pi.vercel.app/)
+
 
  ## Made by
 
