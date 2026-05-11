@@ -1914,6 +1914,7 @@ nav{
     flex:1;
   }
 
+
   .faq-btn{
     width:48px;
     height:48px;
@@ -1946,6 +1947,151 @@ nav{
 
   .footer-links{
     flex-wrap:wrap;
+    justify-content:center;
+  }
+
+
+}
+@media (max-width: 480px){
+
+  html,
+  body{
+    overflow-x:hidden;
+  }
+
+  nav{
+    padding:10px 12px;
+  }
+
+  .nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-width:0;
+    flex:1;
+    overflow:hidden;
+  }
+
+  .logo h2,
+  .logo div,
+  .logo span{
+    font-size:18px;
+    white-space:nowrap;
+  }
+
+  .nav-btn{
+    height:40px !important;
+    min-height:40px !important;
+    padding:0 12px !important;
+    font-size:14px !important;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    line-height:1;
+  }
+
+  .hero h1{
+    font-size:40px !important;
+    line-height:1.08;
+    letter-spacing:-1px;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  #typing-word{
+    display:inline;
+    white-space:normal !important;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  .cursor{
+    display:inline;
+  }
+
+  .task{
+    align-items:center;
+  }
+
+  .task input[type="checkbox"]{
+    appearance:none;
+    width:22px !important;
+    height:22px !important;
+    min-width:22px !important;
+    min-height:22px !important;
+    max-width:22px !important;
+    max-height:22px !important;
+    border-radius:50% !important;
+    aspect-ratio:1/1;
+    flex:none;
+    padding:0 !important;
+  }
+
+  .faq-question{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+
+  .faq-question h3{
+    flex:1;
+    font-size:16px;
+    line-height:1.35;
+  }
+
+  .faq-btn{
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    min-height:44px !important;
+    max-width:44px !important;
+    max-height:44px !important;
+    border-radius:50% !important;
+    aspect-ratio:1/1;
+    padding:0 !important;
+    flex:none !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .heatmap-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:10px;
+  }
+
+  .heat{
+    width:100%;
+    height:78px;
+    min-height:78px;
+    border-radius:14px;
+  }
+
+  .footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:18px;
+  }
+
+  .footer-copy{
+    width:100%;
+    text-align:center;
+    display:flex;
+    align-items:center;
     justify-content:center;
   }
 }
