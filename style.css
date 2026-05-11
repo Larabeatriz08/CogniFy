@@ -47,7 +47,8 @@ nav{
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:30px;
+  font-size:clamp(18px, 2vw, 30px);
+  font-size:clamp(18px, 2vw, 30px);
   font-weight:bold;
 }
 
@@ -1673,3 +1674,98 @@ nav{
     );
   }
 }
+
+
+
+@media (max-width: 1200px){
+
+  .hero h1{
+    font-size:64px;
+  }
+
+  .descricao{
+    font-size:26px;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:56px;
+  }
+
+  .feature-card h3{
+    font-size:34px;
+  }
+
+  .feature-card p,
+  .analytics-header p,
+  .features-header p{
+    font-size:22px;
+  }
+
+}
+
+
+@media (max-width: 992px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    padding:90px 0 60px;
+  }
+
+  .hero h1{
+    font-size:52px;
+    line-height:1.1;
+    letter-spacing:-2px;
+  }
+
+  .descricao{
+    font-size:22px;
+    line-height:1.5;
+  }
+
+  .stats{
+    gap:40px;
+  }
+
+  .stats-grid,
+  .metrics-grid,
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .top-bar{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
+
+  .url,
+  .sequencia{
+    justify-self:center;
+  }
+
+  .focus-header,
+  .grafico-header,
+  .heatmap-header,
+  .tasks-header,
+  .next-session{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .cta-card{
+    padding:80px 30px;
+  }
+
+  .cta-card h2{
+    font-size:52px;
+  }
+
+}
+
