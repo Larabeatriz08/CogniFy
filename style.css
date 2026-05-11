@@ -47,7 +47,8 @@ nav{
   display:flex;
   align-items:center;
   gap:12px;
-  font-size:30px;
+  font-size:clamp(18px, 2vw, 30px);
+  font-size:clamp(18px, 2vw, 30px);
   font-weight:bold;
 }
 
@@ -1671,5 +1672,426 @@ nav{
     100% 100%,
     0% 100%
     );
+  }
+}
+
+
+
+@media (max-width: 1200px){
+
+  .hero h1{
+    font-size:64px;
+  }
+
+  .descricao{
+    font-size:26px;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:56px;
+  }
+
+  .feature-card h3{
+    font-size:34px;
+  }
+
+  .feature-card p,
+  .analytics-header p,
+  .features-header p{
+    font-size:22px;
+  }
+
+}
+
+
+@media (max-width: 992px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    padding:90px 0 60px;
+  }
+
+  .hero h1{
+    font-size:52px;
+    line-height:1.1;
+    letter-spacing:-2px;
+  }
+
+  .descricao{
+    font-size:22px;
+    line-height:1.5;
+  }
+
+  .stats{
+    gap:40px;
+  }
+
+  .stats-grid,
+  .metrics-grid,
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .top-bar{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
+
+  .url,
+  .sequencia{
+    justify-self:center;
+  }
+
+  .focus-header,
+  .grafico-header,
+  .heatmap-header,
+  .tasks-header,
+  .next-session{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .cta-card{
+    padding:80px 30px;
+  }
+
+  .cta-card h2{
+    font-size:52px;
+  }
+
+}
+
+
+@media (max-width: 767px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:92%;
+  }
+
+  nav{
+    padding:10px 14px;
+    border-radius:22px;
+    overflow:hidden;
+  }
+
+  .nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+
+  .menu{
+    display:none;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:16px;
+    min-width:0;
+  }
+
+  .logo h2{
+    font-size:16px;
+    white-space:nowrap;
+  }
+
+  .logo-icon{
+    width:34px;
+    height:34px;
+    flex-shrink:0;
+  }
+
+  .nav-btn{
+    padding:10px 14px;
+    font-size:13px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+
+  .hero{
+    padding:70px 0 50px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.1;
+    letter-spacing:-1px;
+    max-width:100%;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+
+  #typing-word{
+    white-space:normal;
+    word-break:break-word;
+  }
+
+  .descricao{
+    font-size:18px;
+    line-height:1.7;
+    padding:0 4px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .primario-btn,
+  .secundario-btn{
+    width:100%;
+    max-width:260px;
+    font-size:18px;
+    padding:18px 22px;
+  }
+
+  .stats-grid,
+  .metrics-grid,
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grafico-card,
+  .focus-card,
+  .insight-card,
+  .heatmap-card{
+    padding:22px;
+    overflow:hidden;
+  }
+
+  .grafico{
+    height:180px;
+    overflow:hidden;
+  }
+
+  .linha{
+    height:100px;
+    bottom:28px;
+  }
+
+  .dias{
+    font-size:11px;
+  }
+
+  .heatmap-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .heat{
+    width:100%;
+    height:60px;
+    border-radius:16px;
+  }
+
+  .faq-item{
+    padding:22px;
+  }
+
+  .faq-question{
+    gap:14px;
+    align-items:center;
+  }
+
+  .faq-question h3{
+    font-size:16px;
+    line-height:1.4;
+    flex:1;
+  }
+
+
+  .faq-btn{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    min-height:48px;
+    border-radius:50%;
+    flex-shrink:0;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:42px;
+    line-height:1.1;
+  }
+
+  .features-header p,
+  .analytics-header p,
+  .cta-card p,
+  .feature-card p,
+  .insight-card p{
+    font-size:18px;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+
+}
+@media (max-width: 480px){
+
+  html,
+  body{
+    overflow-x:hidden;
+  }
+
+  nav{
+    padding:10px 12px;
+  }
+
+  .nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    min-width:0;
+    flex:1;
+    overflow:hidden;
+  }
+
+  .logo h2,
+  .logo div,
+  .logo span{
+    font-size:18px;
+    white-space:nowrap;
+  }
+
+  .nav-btn{
+    height:40px !important;
+    min-height:40px !important;
+    padding:0 12px !important;
+    font-size:14px !important;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    line-height:1;
+  }
+
+  .hero h1{
+    font-size:40px !important;
+    line-height:1.08;
+    letter-spacing:-1px;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  #typing-word{
+    display:inline;
+    white-space:normal !important;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+  }
+
+  .cursor{
+    display:inline;
+  }
+
+  .task{
+    align-items:center;
+  }
+
+  .task input[type="checkbox"]{
+    appearance:none;
+    width:22px !important;
+    height:22px !important;
+    min-width:22px !important;
+    min-height:22px !important;
+    max-width:22px !important;
+    max-height:22px !important;
+    border-radius:50% !important;
+    aspect-ratio:1/1;
+    flex:none;
+    padding:0 !important;
+  }
+
+  .faq-question{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+  }
+
+  .faq-question h3{
+    flex:1;
+    font-size:16px;
+    line-height:1.35;
+  }
+
+  .faq-btn{
+    width:44px !important;
+    height:44px !important;
+    min-width:44px !important;
+    min-height:44px !important;
+    max-width:44px !important;
+    max-height:44px !important;
+    border-radius:50% !important;
+    aspect-ratio:1/1;
+    padding:0 !important;
+    flex:none !important;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .heatmap-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:10px;
+  }
+
+  .heat{
+    width:100%;
+    height:78px;
+    min-height:78px;
+    border-radius:14px;
+  }
+
+  .footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:18px;
+  }
+
+  .footer-copy{
+    width:100%;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 }
