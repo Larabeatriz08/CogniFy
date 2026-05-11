@@ -1673,3 +1673,327 @@ nav{
     );
   }
 }
+
+/* =========================
+   RESPONSIVIDADE TOTAL
+========================= */
+
+/* NOTEBOOK */
+@media (max-width: 1200px){
+
+  .hero h1{
+    font-size:64px;
+  }
+
+  .descricao{
+    font-size:26px;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:56px;
+  }
+
+  .feature-card h3{
+    font-size:34px;
+  }
+
+  .feature-card p,
+  .analytics-header p,
+  .features-header p{
+    font-size:22px;
+  }
+
+}
+
+/* TABLET */
+@media (max-width: 992px){
+
+  .menu{
+    display:none;
+  }
+
+  .hero{
+    padding:90px 0 60px;
+  }
+
+  .hero h1{
+    font-size:52px;
+    line-height:1.1;
+    letter-spacing:-2px;
+  }
+
+  .descricao{
+    font-size:22px;
+    line-height:1.5;
+  }
+
+  .stats{
+    gap:40px;
+  }
+
+  .stats-grid,
+  .metrics-grid,
+  .features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .top-bar{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
+
+  .url,
+  .sequencia{
+    justify-self:center;
+  }
+
+  .focus-header,
+  .grafico-header,
+  .heatmap-header,
+  .tasks-header,
+  .next-session{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .cta-card{
+    padding:80px 30px;
+  }
+
+  .cta-card h2{
+    font-size:52px;
+  }
+
+}
+
+/* MOBILE GERAL */
+@media (max-width: 768px){
+
+  .container{
+    width:92%;
+  }
+
+  nav{
+    padding:12px 16px;
+    border-radius:24px;
+  }
+
+  .nav-container{
+    gap:10px;
+  }
+
+  .logo{
+    font-size:22px;
+    gap:8px;
+  }
+
+  .logo-icon{
+    width:36px;
+    height:36px;
+  }
+
+  .nav-btn{
+    padding:12px 20px;
+    font-size:15px;
+  }
+
+  .hero{
+    padding-top:70px;
+  }
+
+  .badge{
+    font-size:12px;
+    padding:8px 14px;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.05;
+    letter-spacing:-2px;
+  }
+
+  .descricao{
+    font-size:20px;
+    line-height:1.6;
+    margin-top:28px;
+  }
+
+  .buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .primario-btn,
+  .secundario-btn{
+    width:100%;
+    max-width:320px;
+    height:62px;
+    font-size:18px;
+    padding:0 20px;
+  }
+
+  .stats{
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .stat h2{
+    font-size:32px;
+  }
+
+  .stat p{
+    font-size:18px;
+  }
+
+  .dashboard-container,
+  .feature-card,
+  .metric-card,
+  .focus-card,
+  .insight-card,
+  .heatmap-card,
+  .faq-item,
+  .cta-card{
+    padding:24px;
+    border-radius:24px;
+  }
+
+  .hero-text h1{
+    font-size:24px;
+  }
+
+  .grafico-card{
+    height:auto;
+  }
+
+  .grafico{
+    height:180px;
+  }
+
+  .bars{
+    gap:12px;
+    height:220px;
+  }
+
+  .bar{
+    border-radius:14px 14px 0 0;
+  }
+
+  .feature-card h3{
+    font-size:28px;
+  }
+
+  .feature-card p{
+    font-size:18px;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:40px;
+    line-height:1.1;
+  }
+
+  .features-header p,
+  .analytics-header p,
+  .cta-card p{
+    font-size:18px;
+  }
+
+  .metric-top h3{
+    font-size:42px;
+  }
+
+  .insight-card p{
+    font-size:20px;
+  }
+
+  .next-session h4{
+    font-size:26px;
+  }
+
+  .next-session span{
+    font-size:20px;
+  }
+
+  .heat{
+    height:80px;
+  }
+
+  .faq-question h3{
+    font-size:18px;
+    max-width:80%;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .footer-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+}
+
+
+@media (max-width: 480px){
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .descricao{
+    font-size:16px;
+  }
+
+  .features-header h2,
+  .analytics-header h2,
+  .faq-header h2,
+  .cta-card h2{
+    font-size:30px;
+  }
+
+  .feature-card h3{
+    font-size:24px;
+  }
+
+  .metric-top h3{
+    font-size:34px;
+  }
+
+  .hero-text h1{
+    font-size:20px;
+  }
+
+  .cta-buttons{
+    flex-direction:column;
+  }
+
+  .cta-primario,
+  .cta-secundario{
+    width:100%;
+  }
+
+  .grafico-select,
+  .mes-select{
+    width:100%;
+  }
+
+  .heatmap-grid{
+    gap:8px;
+  }
+
+  .heat{
+    height:60px;
+    border-radius:12px;
+  }
+
+}
