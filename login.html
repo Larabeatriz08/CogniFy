@@ -1,18 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login • CogniFy AI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
 
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -26,11 +30,15 @@
   <header class="topbar">
 
     <div class="logo">
+
       <div class="logo-icon">
         <i data-lucide="brain"></i>
       </div>
 
-      <span>CogniFy <strong>AI</strong></span>
+      <span>
+        CogniFy <strong>AI</strong>
+      </span>
+
     </div>
 
     <a href="index.html" class="back-btn">
@@ -42,9 +50,13 @@
   <main class="auth-container">
 
     <section class="auth-card">
+
       <div class="secure-badge">
+
         <span class="dot"></span>
+
         Acesso seguro
+
       </div>
 
       <h1>Bem-vindo de volta</h1>
@@ -67,14 +79,20 @@
 
       <div class="social-buttons">
 
-        <button class="social-btn">
+        <button class="social-btn" type="button">
+
           <i class="fa-brands fa-google"></i>
+
           <span>Continuar com Google</span>
+
         </button>
 
-        <button class="social-btn">
+        <button class="social-btn" type="button">
+
           <i data-lucide="apple"></i>
+
           <span>Continuar com Apple</span>
+
         </button>
 
       </div>
@@ -83,19 +101,23 @@
         <span>ou com e-mail</span>
       </div>
 
-      <form class="auth-form">
+      <form class="auth-form" onsubmit="login(event)">
 
         <div class="input-group">
 
           <label>E-mail</label>
 
           <div class="input-wrapper">
+
             <i data-lucide="mail"></i>
 
             <input
               type="email"
+              id="email"
               placeholder="voce@email.com"
+              required
             />
+
           </div>
 
         </div>
@@ -112,6 +134,7 @@
               type="password"
               placeholder="••••••••"
               id="senha"
+              required
             />
 
             <button
@@ -119,7 +142,9 @@
               class="eye-btn"
               id="toggleSenha"
             >
+
               <i data-lucide="eye"></i>
+
             </button>
 
           </div>
@@ -129,8 +154,11 @@
         <div class="options">
 
           <label class="checkbox">
+
             <input type="checkbox">
+
             <span>Lembrar de mim</span>
+
           </label>
 
           <a href="#">
@@ -150,21 +178,33 @@
       </form>
 
       <p class="bottom-text">
+
         Novo por aqui?
-        <a href="cadastro.html">Criar conta</a>
+
+        <a href="cadastro.html">
+          Criar conta
+        </a>
+
       </p>
 
     </section>
 
     <aside class="preview-card">
+
       <div class="preview-item">
+
         <div class="preview-icon">
           ⚡
         </div>
 
         <div>
+
           <h3>Cronograma inteligente</h3>
-          <p>Sua IA monta a semana ideal em segundos.</p>
+
+          <p>
+            Sua IA monta a semana ideal em segundos.
+          </p>
+
         </div>
 
       </div>
@@ -176,8 +216,13 @@
         </div>
 
         <div>
+
           <h3>Desempenho em tempo real</h3>
-          <p>Veja seu progresso por matéria e foco.</p>
+
+          <p>
+            Veja seu progresso por matéria e foco.
+          </p>
+
         </div>
 
       </div>
@@ -189,8 +234,13 @@
         </div>
 
         <div>
+
           <h3>Estudo guiado por IA</h3>
-          <p>Recomendações baseadas no seu ritmo.</p>
+
+          <p>
+            Recomendações baseadas no seu ritmo.
+          </p>
+
         </div>
 
       </div>
@@ -198,6 +248,7 @@
       <div class="chart-box">
 
         <div class="bars">
+
           <span></span>
           <span></span>
           <span></span>
@@ -205,18 +256,23 @@
           <span></span>
           <span></span>
           <span></span>
+
         </div>
 
       </div>
 
       <div class="chart-footer">
+
         <span>• Foco semanal</span>
+
         <strong>+24%</strong>
+
       </div>
 
     </aside>
 
   </main>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./js/supabase.js"></script>
   <script src="js/login.js"></script>

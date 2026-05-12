@@ -1,39 +1,153 @@
+
 lucide.createIcons();
 
 const toggleSenha =
 document.getElementById("toggleSenha");
 
-const senha =
+const senhaInput =
 document.getElementById("senha");
 
-if(toggleSenha){
+toggleSenha.addEventListener("click",()=>{
 
-  toggleSenha.addEventListener("click",()=>{
+  if(senhaInput.type === "password"){
 
-    senha.type =
-    senha.type === "password"
-    ? "text"
-    : "password";
+    senhaInput.type = "text";
+
+  } else {
+
+    senhaInput.type = "password";
+
+  }
+
+});
+
+async function login(event){
+
+  event.preventDefault();
+
+  const email =
+  document.getElementById("email").value.trim();
+
+  const senha =
+  document.getElementById("senha").value;
+
+  const botao =
+  document.querySelector(".submit-btn");
+
+
+
+
+
+  if(!email || !senha){
+
+    mostrarMensagem(
+      "Preencha todos os campos.",
+      true
+    );
+
+    return;
+  }
+
+
+
+
+
+  botao.disabled = true;
+
+  botao.innerText =
+  "Entrando...";
+
+
+
+  const { data, error } =
+  await window.supabaseClient.auth.signInWithPassword({
+
+    email: email,
+
+    password: senha
 
   });
 
+
+
+  
+
+  if(error){
+
+    botao.disabled = false;
+
+    botao.innerText =
+    "Entrar →";
+
+
+
+    mostrarMensagem(
+      "Email ou senha inválidos.",
+      true
+    );
+
+    return;
+  }
+
+
+
+  
+
+  mostrarMensagem(
+    "Login realizado!"
+  );
+
+
+
+  setTimeout(()=>{
+
+    window.location.href =
+    "dashboard.html";
+
+  },1500);
+
 }
 
-const toggleCadastro =
-document.getElementById("toggleCadastro");
 
-const senhaCadastro =
-document.getElementById("senhaCadastro");
 
-if(toggleCadastro){
+function mostrarMensagem(
+  texto,
+  erro=false
+){
 
-  toggleCadastro.addEventListener("click",()=>{
+  const toast =
+  document.createElement("div");
 
-    senhaCadastro.type =
-    senhaCadastro.type === "password"
-    ? "text"
-    : "password";
+  toast.className =
+  erro ? "toast erro" : "toast";
 
-  });
+  toast.innerText = texto;
+
+  document.body.appendChild(toast);
+
+
+
+  setTimeout(()=>{
+
+    toast.classList.add("show");
+
+  },100);
+
+
+
+  setTimeout(()=>{
+
+    toast.classList.remove("show");
+
+
+
+    setTimeout(()=>{
+
+      toast.remove();
+
+    },300);
+
+  },3000);
 
 }
+
