@@ -54,27 +54,41 @@ async function cadastrar(event){
 
   event.preventDefault();
 
-  const nome = document.querySelector("#nome").value;
-  const email = document.querySelector("#email").value;
-  const senha = document.querySelector("#senha").value;
+  const nome =
+  document.getElementById("nome").value;
 
-  const { data, error } = await supabase.auth.signUp({
+  const email =
+  document.getElementById("email").value;
+
+  const senha =
+  document.getElementById("senha").value;
+
+  const { data, error } =
+  await supabase.auth.signUp({
+
     email: email,
     password: senha,
+
     options:{
       data:{
-        nome:nome
+        nome: nome
       }
     }
+
   });
 
   if(error){
+
     alert(error.message);
     return;
+
   }
 
   alert("Conta criada com sucesso!");
 
-  window.location.href = "login.html";
+  window.location.href =
+  "login.html";
+
 }
+
 
