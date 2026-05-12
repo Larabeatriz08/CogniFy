@@ -514,6 +514,44 @@ body::before{
   pointer-events:none;
 }
 
+.toast{
+  position:fixed;
+  top:30px;
+  right:30px;
+  background:
+  linear-gradient(
+    135deg,
+    #8b5cf6,
+    #c4b5fd
+  );
+  color:white;
+  padding:16px 22px;
+  border-radius:18px;
+  font-weight:600;
+  z-index:9999;
+  opacity:0;
+  transform:translateY(-20px);
+  transition:.3s ease;
+  box-shadow:
+  0 15px 40px rgba(139,92,246,.35);
+}
+
+.toast.erro{
+  background:
+  linear-gradient(
+    135deg,
+    #ef4444,
+    #f87171
+  );
+  box-shadow:
+  0 15px 40px rgba(239,68,68,.35);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 
 @keyframes grow{
   from{
