@@ -312,6 +312,15 @@ nav{
   background:#28c840;
 }
 
+.hero{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
 .hero-text{
   display:flex;
   flex-direction:column;
