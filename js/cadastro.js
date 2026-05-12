@@ -3,52 +3,22 @@ lucide.createIcons();
 const toggleSenha =
 document.getElementById("toggleSenha");
 
-const senha =
+const senhaInput =
 document.getElementById("senha");
 
 toggleSenha.addEventListener("click",()=>{
 
-  if(senha.type === "password"){
+  if(senhaInput.type === "password"){
 
-    senha.type = "text";
+    senhaInput.type = "text";
 
   } else {
 
-    senha.type = "password";
+    senhaInput.type = "password";
+
   }
 
 });
-
-const buttons =
-document.querySelectorAll("button");
-
-buttons.forEach(button=>{
-
-  button.addEventListener("mousemove",(e)=>{
-
-    const rect =
-    button.getBoundingClientRect();
-
-    const x =
-    e.clientX - rect.left - rect.width / 2;
-
-    const y =
-    e.clientY - rect.top - rect.height / 2;
-
-    button.style.transform =
-    `translate(${x*0.08}px,${y*0.08}px)`;
-
-  });
-
-  button.addEventListener("mouseleave",()=>{
-
-    button.style.transform =
-    "translate(0,0)";
-
-  });
-
-});
-
 
 async function cadastrar(event){
 
@@ -63,10 +33,13 @@ async function cadastrar(event){
   const senha =
   document.getElementById("senha").value;
 
+  console.log(nome,email,senha);
+
   const { data, error } =
   await supabase.auth.signUp({
 
     email: email,
+
     password: senha,
 
     options:{
@@ -79,9 +52,11 @@ async function cadastrar(event){
 
   if(error){
 
-    alert(error.message);
-    return;
+    console.error(error);
 
+    alert(error.message);
+
+    return;
   }
 
   alert("Conta criada com sucesso!");
@@ -90,5 +65,3 @@ async function cadastrar(event){
   "login.html";
 
 }
-
-

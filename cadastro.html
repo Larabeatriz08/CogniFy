@@ -7,10 +7,16 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -26,7 +32,9 @@
       <div class="logo-icon">
         <i data-lucide="brain"></i>
       </div>
-     <span>CogniFy <strong>AI</strong></span> 
+
+      <span>CogniFy <strong>AI</strong></span>
+
     </div>
 
     <a href="index.html" class="back-btn">
@@ -52,98 +60,127 @@
 
       <div class="switch">
 
-        <button onclick="window.location.href='login.html'">
+        <button
+          type="button"
+          onclick="window.location.href='login.html'"
+        >
           Entrar
         </button>
 
-        <button class="active">
+        <button
+          type="button"
+          class="active"
+        >
           Criar conta
         </button>
 
       </div>
 
       <div class="socials">
-  <button class="social-btn">
-        <i class="fa-brands fa-google google-icon"></i>
-        <span>Continuar com Google</span>
-  </button>
 
-  <button class="social-btn">
-        <i data-lucide="apple"></i>
-        <span>Continuar com Apple</span>
-  </button>
+        <button type="button" class="social-btn">
 
-   </div>
- </div>
-</div>
+          <i class="fa-brands fa-google google-icon"></i>
 
-<form onsubmit="cadastrar(event)">
-      <div class="divider">
-        ou com e-mail
-      </div>
+          <span>Continuar com Google</span>
 
-      <div class="input-group">
+        </button>
 
-        <label>Nome completo</label>
+        <button type="button" class="social-btn">
 
-        <input
-          type="text"
-          class="input"
-          id="nome"
-          placeholder="Seu nome">
+          <i data-lucide="apple"></i>
+
+          <span>Continuar com Apple</span>
+
+        </button>
 
       </div>
 
-      <div class="input-group">
+      <form onsubmit="cadastrar(event)">
 
-        <label>E-mail</label>
+        <div class="divider">
+          ou com e-mail
+        </div>
 
-        <input
-          type="email"
-          class="input"
-          id="email"
-          placeholder="voce@email.com">
+        <div class="input-group">
 
-      </div>
-
-      <div class="input-group">
-
-        <label>Senha</label>
-
-        <div class="password">
+          <label for="nome">
+            Nome completo
+          </label>
 
           <input
-            type="password"
+            type="text"
             class="input"
-            id="senha"
-            placeholder="Mínimo 8 caracteres">
-
-          <i
-            data-lucide="eye"
-            class="eye"
-            id="toggleSenha">
-          </i>
+            id="nome"
+            placeholder="Seu nome"
+            required
+          >
 
         </div>
 
-      </div>
+        <div class="input-group">
 
-      <div class="terms">
+          <label for="email">
+            E-mail
+          </label>
 
-        <input type="checkbox">
+          <input
+            type="email"
+            class="input"
+            id="email"
+            placeholder="voce@email.com"
+            required
+          >
 
-        <p>
-          Concordo com os
-          <a href="#">Termos</a>
-          e a
-          <a href="#">Política de Privacidade</a>.
-        </p>
+        </div>
 
-      </div>
+        <div class="input-group">
 
-      <button class="submit">
-        Criar conta gratuita →
-      </button>
+          <label for="senha">
+            Senha
+          </label>
+
+          <div class="password">
+
+            <input
+              type="password"
+              class="input"
+              id="senha"
+              placeholder="Mínimo 8 caracteres"
+              required
+            >
+
+            <i
+              data-lucide="eye"
+              class="eye"
+              id="toggleSenha"
+            ></i>
+
+          </div>
+
+        </div>
+
+        <div class="terms">
+
+          <input
+            type="checkbox"
+            required
+          >
+
+          <p>
+            Concordo com os
+            <a href="#">Termos</a>
+            e a
+            <a href="#">Política de Privacidade</a>.
+          </p>
+
+        </div>
+
+        <button type="submit" class="submit">
+          Criar conta gratuita →
+        </button>
+
+      </form>
 
       <div class="bottom-text">
 
@@ -152,25 +189,29 @@
         <a href="login.html">
           Entrar
         </a>
-      </form>  
 
       </div>
 
     </section>
 
     <aside class="info-card">
+
       <div class="feature">
+
         <div class="feature-icon">
           ⚡
         </div>
 
         <div>
+
           <h3>Cronograma inteligente</h3>
 
           <p>
             Sua IA monta a semana ideal em segundos.
           </p>
+
         </div>
+
       </div>
 
       <div class="feature">
@@ -178,12 +219,15 @@
         <div class="feature-icon">
           📈
         </div>
+
         <div>
+
           <h3>Desempenho em tempo real</h3>
 
           <p>
             Veja seu progresso por matéria e foco.
           </p>
+
         </div>
 
       </div>
@@ -195,11 +239,13 @@
         </div>
 
         <div>
+
           <h3>Estudo guiado por IA</h3>
 
           <p>
             Recomendações baseadas no seu ritmo.
           </p>
+
         </div>
 
       </div>
@@ -231,9 +277,10 @@
   <script>
     lucide.createIcons();
   </script>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./js/supabase.js"></script>
-  <script src="js/cadastro.js"></script>
+  <script src="./js/cadastro.js"></script>
 
 </body>
 </html>
