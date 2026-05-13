@@ -1,6 +1,5 @@
 lucide.createIcons();
 
-
 const userTrigger =
 document.getElementById("userTrigger");
 
@@ -19,11 +18,45 @@ document.getElementById("senha");
 const profileAvatar =
 document.getElementById("profileAvatar");
 
+const avatarInput =
+document.getElementById("avatarInput");
+
+const profileLetter =
+document.getElementById("profileLetter");
+
 const userName =
 document.getElementById("userName");
 
 const form =
 document.getElementById("profileForm");
+
+const customAlert =
+document.getElementById("customAlert");
+
+const alertMessage =
+document.getElementById("alertMessage");
+
+const alertButton =
+document.getElementById("alertButton");
+
+
+
+function showAlert(message){
+
+  alertMessage.innerText =
+  message;
+
+  customAlert.classList.add("active");
+
+}
+
+
+
+alertButton.addEventListener("click",()=>{
+
+  customAlert.classList.remove("active");
+
+});
 
 
 
@@ -109,8 +142,29 @@ async function carregarUsuario(){
 
 
 
-  profileAvatar.innerText =
-  primeiraLetra;
+  const avatarUrl =
+  user.user_metadata.avatar_url;
+
+
+
+  if(avatarUrl){
+
+    profileAvatar.innerHTML = `
+      <img
+        src="${avatarUrl}"
+        class="profile-image"
+      >
+    `;
+
+  }else{
+
+    profileAvatar.innerHTML = `
+      <span id="profileLetter">
+        ${primeiraLetra}
+      </span>
+    `;
+
+  }
 
 }
 
@@ -150,9 +204,7 @@ form.addEventListener("submit",async(e)=>{
     const updateData = {
 
       data:{
-
         nome:nome
-
       }
 
     };
@@ -179,9 +231,31 @@ form.addEventListener("submit",async(e)=>{
 
     if(error){
 
-      alert(error.message);
+      if(
+        error.message.includes(
+          "New password should be different"
+        )
+      ){
+
+        showAlert(
+          "Sua nova senha precisa ser diferente da senha atual."
+        );
+
+      }else{
+
+        showAlert(
+          "Não foi possível salvar suas alterações."
+        );
+
+      }
 
       saveBtn.disabled = false;
+
+      saveBtn.innerHTML = `
+        <span>
+          Salvar alterações
+        </span>
+      `;
 
       return;
 
@@ -201,7 +275,7 @@ form.addEventListener("submit",async(e)=>{
 
 
     const primeiraLetra =
-    nome.charAt(0).toUpperCase();
+    nome.charAt(0).toUpperCase() || "U";
 
 
 
@@ -211,8 +285,29 @@ form.addEventListener("submit",async(e)=>{
 
 
 
-    profileAvatar.innerText =
-    primeiraLetra;
+    const avatarUrl =
+    updateData.data.avatar_url;
+
+
+
+    if(avatarUrl){
+
+      profileAvatar.innerHTML = `
+        <img
+          src="${avatarUrl}"
+          class="profile-image"
+        >
+      `;
+
+    }else{
+
+      profileAvatar.innerHTML = `
+        <span id="profileLetter">
+          ${primeiraLetra}
+        </span>
+      `;
+
+    }
 
 
 
@@ -244,9 +339,17 @@ form.addEventListener("submit",async(e)=>{
 
   }catch(error){
 
-    alert("Erro ao salvar alterações.");
+    showAlert(
+      "Ocorreu um erro inesperado. Tente novamente."
+    );
 
     saveBtn.disabled = false;
+
+    saveBtn.innerHTML = `
+      <span>
+        Salvar alterações
+      </span>
+    `;
 
   }
 
