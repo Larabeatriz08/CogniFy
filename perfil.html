@@ -2,56 +2,27 @@
 <html lang="pt-BR">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Meu Perfil • CogniFy AI</title>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    rel="stylesheet"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="./assets/favicon.png"
-  >
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <link
-    rel="stylesheet"
-    href="css/perfil.css"
-  >
-
+  <link rel="stylesheet" href="css/perfil.css">
 </head>
 
 <body>
 
   <header class="topbar">
 
-    <a
-      href="dashboard.html"
-      class="logo"
-    >
-
+    <a href="dashboard.html" class="logo">
       <div class="logo-icon">
         <i data-lucide="brain"></i>
       </div>
@@ -59,53 +30,29 @@
       <span>
         CogniFy <strong>AI</strong>
       </span>
-
     </a>
-
-
 
     <div class="user-menu">
 
-      <button
-        class="user-trigger"
-        id="userTrigger"
-      >
+      <button class="user-trigger" id="userTrigger">
 
-        <div
-          class="avatar"
-          id="avatar"
-        >
-          U
-        </div>
+        <div class="avatar" id="avatar"></div>
 
         <div class="user-info">
-
           <span class="welcome-text">
             Bem-vinda
           </span>
 
-          <span
-            class="user-name"
-            id="userName"
-          >
+          <span class="user-name" id="userName">
             Usuário
           </span>
-
         </div>
 
-        <i
-          data-lucide="chevron-down"
-          class="dropdown-arrow"
-        ></i>
+        <i data-lucide="chevron-down" class="dropdown-arrow"></i>
 
       </button>
 
-
-
-      <div
-        class="dropdown"
-        id="dropdown"
-      >
+      <div class="dropdown" id="dropdown">
 
         <div class="dropdown-header">
 
@@ -114,7 +61,6 @@
           </div>
 
           <div>
-
             <strong id="dropdownName">
               Usuário
             </strong>
@@ -122,20 +68,13 @@
             <p>
               Conta ativa
             </p>
-
           </div>
 
         </div>
 
-
-
         <div class="dropdown-divider"></div>
 
-
-
-        <button
-          class="dropdown-item active"
-        >
+        <button class="dropdown-item active">
 
           <i data-lucide="user-round"></i>
 
@@ -145,12 +84,7 @@
 
         </button>
 
-
-
-        <a
-          href="dashboard.html"
-          class="dropdown-link"
-        >
+        <a href="dashboard.html" class="dropdown-link">
 
           <button class="dropdown-item">
 
@@ -164,16 +98,9 @@
 
         </a>
 
-
-
         <div class="dropdown-divider"></div>
 
-
-
-        <button
-          class="dropdown-item danger"
-          onclick="logout()"
-        >
+        <button class="dropdown-item danger" onclick="logout()">
 
           <i data-lucide="log-out"></i>
 
@@ -189,26 +116,17 @@
 
   </header>
 
-
-
   <main class="profile-page">
 
     <section class="profile-card">
 
       <div class="profile-header">
 
-        <div class="profile-avatar">
-
-          <span id="profileLetter">
-            U
-          </span>
-
+        <div class="profile-avatar" id="profileAvatar">
+          <span id="profileLetter"></span>
         </div>
 
-
-
         <div>
-
           <h1>
             Meu Perfil
           </h1>
@@ -216,17 +134,11 @@
           <p>
             Gerencie suas informações pessoais.
           </p>
-
         </div>
 
       </div>
 
-
-
-      <form
-        class="profile-form"
-        id="profileForm"
-      >
+      <form class="profile-form" id="profileForm">
 
         <div class="input-group">
 
@@ -238,17 +150,11 @@
 
             <i data-lucide="user"></i>
 
-            <input
-              type="text"
-              id="nome"
-              placeholder="Seu nome"
-            >
+            <input type="text" id="nome" placeholder="Seu nome">
 
           </div>
 
         </div>
-
-
 
         <div class="input-group">
 
@@ -260,17 +166,11 @@
 
             <i data-lucide="mail"></i>
 
-            <input
-              type="email"
-              id="email"
-              placeholder="voce@email.com"
-            >
+            <input type="email" id="email" placeholder="voce@email.com">
 
           </div>
 
         </div>
-
-
 
         <div class="input-group">
 
@@ -282,24 +182,13 @@
 
             <i data-lucide="lock"></i>
 
-            <input
-              type="password"
-              id="senha"
-              placeholder="Nova senha"
-            >
+            <input type="password" id="senha" placeholder="Nova senha">
 
           </div>
 
         </div>
 
-
-
-        <button
-          type="submit"
-          class="save-btn"
-        >
-
-          <i data-lucide="save"></i>
+        <button type="submit" class="save-btn">
 
           <span>
             Salvar alterações
@@ -312,8 +201,6 @@
     </section>
 
   </main>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./js/supabase.js"></script>
