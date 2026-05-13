@@ -50,8 +50,6 @@ async function login(event){
 
 
 
-
-
   botao.disabled = true;
 
   botao.innerText =
@@ -88,8 +86,6 @@ async function login(event){
 
     return;
   }
-
-
 
   
 
