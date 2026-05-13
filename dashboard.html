@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Dashboard • CogniFy AI</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="css/dashboard.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard • CogniFy AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="css/dashboard.css">
 
 </head>
 
@@ -58,141 +51,94 @@
 
   <main class="dashboard">
 
-    <section class="left">
+    <section class="welcome-card">
 
-      <div class="hero-card">
+      <div class="welcome-badge">
 
-        <h1>
-          Seu painel inteligente!
-        </h1>
+        <div class="dot"></div>
+
+        Sistema ativo
+
+      </div>
+
+      <h1 id="welcomeTitle">
+        Olá!!
+      </h1>
+
+      <p>
+        Vamos começar sua jornada de estudos.
+        A IA vai montar um plano baseado
+        na sua rotina e objetivos.
+      </p>
+
+        <button class="start-btn">
+            <i data-lucide="sparkles"></i>
+            <span>
+                Criar meu cronograma inteligente
+            </span>
+        </button>
+        </section>
+
+
+
+    <section class="empty-grid">
+
+      <div class="empty-card">
+
+        <div class="empty-icon">
+          <i data-lucide="target"></i>
+        </div>
+
+        <h3>
+          Nenhuma meta criada
+        </h3>
 
         <p>
-          Organize tarefas, acompanhe seu foco
-          e deixe a IA otimizar sua rotina
-          de estudos automaticamente.
+          Defina seus primeiros objetivos
+          para a IA montar sua rotina.
         </p>
 
       </div>
 
-      <div class="cards">
 
-        <div class="card">
 
-          <div class="card-icon">
-            📚
-          </div>
+      <div class="empty-card">
 
-          <h3>Horas estudadas</h3>
-
-          <strong>24h</strong>
-
-          <p>
-            Nesta semana
-          </p>
-
+        <div class="empty-icon">
+            <i data-lucide="check-circle-2"></i>
         </div>
 
-        <div class="card">
+        <h3>
+          Sem tarefas ainda
+        </h3>
 
-          <div class="card-icon">
-            ⚡
-          </div>
-
-          <h3>Produtividade</h3>
-
-          <strong>89%</strong>
-
-          <p>
-            Acima da média
-          </p>
-
-        </div>
-
-        <div class="card">
-
-          <div class="card-icon">
-            🧠
-          </div>
-
-          <h3>Foco</h3>
-
-          <strong>7.8</strong>
-
-          <p>
-            IA detectou melhora
-          </p>
-
-        </div>
+        <p>
+          Adicione atividades e acompanhe
+          seu progresso diariamente.
+        </p>
 
       </div>
 
-      <div class="tasks-card">
 
-        <h2>
-          Metas do dia
-        </h2>
 
-        <div class="task">
-          <input type="checkbox">
-          <span>Revisar matemática</span>
+      <div class="empty-card">
+
+        <div class="empty-icon">
+            <i data-lucide="brain"></i>
         </div>
 
-        <div class="task">
-          <input type="checkbox">
-          <span>Praticar programação</span>
-        </div>
+        <h3>
+          IA aguardando informações
+        </h3>
 
-        <div class="task">
-          <input type="checkbox">
-          <span>Resolver exercícios</span>
-        </div>
-
-        <div class="task">
-          <input type="checkbox">
-          <span>Estudar inglês</span>
-        </div>
+        <p>
+          Complete seu perfil para receber
+          recomendações inteligentes.
+        </p>
 
       </div>
 
     </section>
-
-    <aside class="right">
-
-      <div class="chart-card">
-
-        <h2>
-          Desempenho semanal
-        </h2>
-
-        <div class="chart">
-
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
-
-        </div>
-
-      </div>
-
-      <div class="ai-card">
-
-        <h2>
-          Sugestão da IA
-        </h2>
-
-        <p>
-          Você teve maior foco no período
-          da manhã. A IA recomenda concentrar
-          matérias difíceis entre 08h e 11h.
-        </p>
-
-      </div>
-
-    </aside>
 
   </main>
 
@@ -201,4 +147,5 @@
   <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
