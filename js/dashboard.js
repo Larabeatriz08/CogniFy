@@ -8,13 +8,16 @@ document.getElementById("dropdown");
 
 
 userTrigger.addEventListener("click",(e)=>{
+
   e.stopPropagation();
+
   dropdown.classList.toggle("active");
 
 });
 
 
 document.addEventListener("click",(e)=>{
+
   if(
     !userTrigger.contains(e.target) &&
     !dropdown.contains(e.target)
@@ -36,6 +39,7 @@ async function carregarUsuario(){
   await window.supabaseClient.auth.getUser();
 
   if(!user){
+
     window.location.href =
     "login.html";
 
@@ -47,16 +51,41 @@ async function carregarUsuario(){
   const nome =
   user.user_metadata.nome || "Usuário";
 
-  document.getElementById("userName").innerText = nome;
 
-  document.getElementById("dropdownName").innerText = nome;
+  const genero =
+  user.user_metadata.genero || "masculino";
 
-  document.getElementById("welcomeTitle").innerText =`Olá, ${nome} `;
 
-  const primeiraLetra = nome.charAt(0).toUpperCase();
-  document.getElementById("avatar").innerText = primeiraLetra;
+  const saudacao =
+  genero === "feminino"
+  ? "Bem-vinda"
+  : "Bem-vindo";
+
+
+
+  document.getElementById("userName").innerText =
+  nome;
+
+  document.getElementById("dropdownName").innerText =
+  nome;
+
+  document.getElementById("welcomeText").innerText =
+  saudacao;
+
+  document.getElementById("welcomeTitle").innerText =
+  `Olá, ${nome}`;
+
+
+
+  const primeiraLetra =
+  nome.charAt(0).toUpperCase();
+
+  document.getElementById("avatar").innerText =
+  primeiraLetra;
 
 }
+
+
 
 async function logout(){
 
@@ -66,5 +95,7 @@ async function logout(){
   "login.html";
 
 }
+
+
 
 carregarUsuario();

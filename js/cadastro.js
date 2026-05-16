@@ -33,15 +33,14 @@ async function cadastrar(event){
   const senha =
   document.getElementById("senha").value;
 
+  const genero =
+  document.getElementById("genero").value;
+
   const termos =
   document.getElementById("termos");
 
   const botao =
   document.querySelector(".submit");
-
-
-
-
 
   if(!nome || !email || !senha){
 
@@ -54,10 +53,6 @@ async function cadastrar(event){
 
   }
 
-
-
- 
-
   if(!termos.checked){
 
     mostrarMensagem(
@@ -69,9 +64,6 @@ async function cadastrar(event){
 
   }
 
-
-
-
   if(senha.length < 8){
 
     mostrarMensagem(
@@ -82,10 +74,6 @@ async function cadastrar(event){
     return;
 
   }
-
-
-
-
 
   const emailValido =
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -101,16 +89,10 @@ async function cadastrar(event){
 
   }
 
-
-
-
-
   botao.disabled = true;
 
   botao.innerText =
   "Criando conta...";
-
-
 
   const { data, error } =
   await window.supabaseClient.auth.signUp({
@@ -121,34 +103,60 @@ async function cadastrar(event){
 
     options:{
       data:{
-        nome:nome
+        nome:nome,
+        genero:genero
       }
     }
 
   });
 
+  if(error){
 
+    botao.disabled = false;
 
+    botao.innerText =
+    "Criar conta gratuita →";
 
-if(error){
+    console.log(error);
 
-  botao.disabled = false;
+    if(
+      error.message.toLowerCase().includes("already")
+    ){
 
-  botao.innerText =
-  "Criar conta gratuita →";
+      mostrarMensagem(
+        "Esse e-mail já está cadastrado.",
+        true
+      );
 
+      return;
+    }
 
+    if(
+      error.message.toLowerCase().includes("rate limit")
+    ){
 
-  console.log(error);
+      mostrarMensagem(
+        "Muitas tentativas. Aguarde alguns segundos.",
+        true
+      );
 
+      return;
+    }
 
+    if(
+      error.message.toLowerCase().includes("password")
+    ){
 
-  if(
-    error.message.toLowerCase().includes("already")
-  ){
+      mostrarMensagem(
+        "Senha muito fraca.",
+        true
+      );
+
+      return;
+    }
 
     mostrarMensagem(
-      "Esse e-mail já está cadastrado.",
+      "Erro ao criar conta.",
       true
     );
 
@@ -157,50 +165,29 @@ if(error){
 
 
 
-  if(
-    error.message.toLowerCase().includes("rate limit")
-  ){
+  const user = data.user;
 
-    mostrarMensagem(
-      "Muitas tentativas. Aguarde alguns segundos.",
-      true
-    );
+  if(user){
 
-    return;
+    await window.supabaseClient
+    .from("profiles")
+    .insert({
+
+      id:user.id,
+
+      nome:nome,
+
+      genero:genero
+
+    });
+
   }
-
-
-
-  if(
-    error.message.toLowerCase().includes("password")
-  ){
-
-    mostrarMensagem(
-      "Senha muito fraca.",
-      true
-    );
-
-    return;
-  }
-
-
-
-  mostrarMensagem(
-    "Erro ao criar conta.",
-    true
-  );
-
-  return;
-}
-
 
 
 
   mostrarMensagem(
     "Conta criada com sucesso!"
   );
-
-
 
   setTimeout(()=>{
 
@@ -228,21 +215,15 @@ function mostrarMensagem(
 
   document.body.appendChild(toast);
 
-
-
   setTimeout(()=>{
 
     toast.classList.add("show");
 
   },100);
 
-
-
   setTimeout(()=>{
 
     toast.classList.remove("show");
-
-
 
     setTimeout(()=>{
 

@@ -21,14 +21,16 @@ document.getElementById("profileAvatar");
 const avatarInput =
 document.getElementById("avatarInput");
 
-const profileLetter =
-document.getElementById("profileLetter");
-
 const userName =
 document.getElementById("userName");
 
 const form =
 document.getElementById("profileForm");
+
+const avatarTop =
+document.getElementById("avatar");
+
+let avatarFile = null;
 
 const customAlert =
 document.getElementById("customAlert");
@@ -85,6 +87,89 @@ document.addEventListener("click",(e)=>{
 
 
 
+avatarInput.addEventListener("change",(e)=>{
+
+  const file =
+  e.target.files[0];
+
+  if(!file) return;
+
+  avatarFile = file;
+
+  const imageUrl =
+  URL.createObjectURL(file);
+
+
+
+  profileAvatar.innerHTML = `
+    <img
+      src="${imageUrl}"
+      class="profile-image"
+    >
+  `;
+
+
+
+  avatarTop.innerHTML = `
+    <img
+      src="${imageUrl}"
+      class="top-avatar-image"
+    >
+  `;
+
+});
+
+
+
+function renderAvatar(nome,avatarUrl){
+
+  const primeiraLetra =
+  nome.charAt(0).toUpperCase() || "U";
+
+
+
+  if(avatarUrl){
+
+    profileAvatar.innerHTML = `
+      <img
+        src="${avatarUrl}"
+        class="profile-image"
+      >
+    `;
+
+
+
+    avatarTop.innerHTML = `
+      <img
+        src="${avatarUrl}"
+        class="top-avatar-image"
+      >
+    `;
+
+  }else{
+
+    profileAvatar.innerHTML = `
+      <span
+        class="profile-letter"
+      >
+        ${primeiraLetra}
+      </span>
+    `;
+
+
+
+    avatarTop.innerHTML = `
+      <span>
+        ${primeiraLetra}
+      </span>
+    `;
+
+  }
+
+}
+
+
+
 async function carregarUsuario(){
 
   const {
@@ -131,40 +216,15 @@ async function carregarUsuario(){
 
 
 
-  const primeiraLetra =
-  nome.charAt(0).toUpperCase() || "U";
-
-
-
-  document.getElementById("avatar")
-  .innerText =
-  primeiraLetra;
-
-
-
   const avatarUrl =
-  user.user_metadata.avatar_url;
+  user.user_metadata.avatar_url || "";
 
 
 
-  if(avatarUrl){
-
-    profileAvatar.innerHTML = `
-      <img
-        src="${avatarUrl}"
-        class="profile-image"
-      >
-    `;
-
-  }else{
-
-    profileAvatar.innerHTML = `
-      <span id="profileLetter">
-        ${primeiraLetra}
-      </span>
-    `;
-
-  }
+  renderAvatar(
+    nome,
+    avatarUrl
+  );
 
 }
 
@@ -173,8 +233,6 @@ async function carregarUsuario(){
 form.addEventListener("submit",async(e)=>{
 
   e.preventDefault();
-
-
 
   const nome =
   nomeInput.value.trim();
@@ -201,6 +259,13 @@ form.addEventListener("submit",async(e)=>{
 
   try{
 
+    const {
+      data:{ user }
+    } =
+    await window.supabaseClient.auth.getUser();
+
+
+
     const updateData = {
 
       data:{
@@ -220,7 +285,72 @@ form.addEventListener("submit",async(e)=>{
 
 
 
+    if(avatarFile){
+
+      const fileExt =
+      avatarFile.name.split(".").pop();
+
+      const fileName =
+      `${user.id}.${fileExt}`;
+
+      const filePath =
+      `usuarios/${fileName}`;
+
+
+
+      const {
+        error:uploadError
+      } =
+      await window.supabaseClient.storage
+      .from("avatars")
+      .upload(
+        filePath,
+        avatarFile,
+        {
+          upsert:true
+        }
+      );
+
+
+
+      if(uploadError){
+
+        showAlert(
+          "Erro ao enviar avatar."
+        );
+
+        saveBtn.disabled = false;
+
+        saveBtn.innerHTML = `
+          <span>
+            Salvar alterações
+          </span>
+        `;
+
+        return;
+
+      }
+
+
+
+      const {
+        data:urlData
+      } =
+      window.supabaseClient.storage
+      .from("avatars")
+      .getPublicUrl(filePath);
+
+
+
+      updateData.data.avatar_url =
+      urlData.publicUrl;
+
+    }
+
+
+
     const {
+      data:userData,
       error
     } =
     await window.supabaseClient.auth.updateUser(
@@ -249,6 +379,8 @@ form.addEventListener("submit",async(e)=>{
 
       }
 
+
+
       saveBtn.disabled = false;
 
       saveBtn.innerHTML = `
@@ -263,55 +395,37 @@ form.addEventListener("submit",async(e)=>{
 
 
 
+    const novoNome =
+    userData.user.user_metadata.nome || nome;
+
+
+
+    const avatarUrl =
+    userData.user.user_metadata.avatar_url || "";
+
+
+
     userName.innerText =
-    nome;
+    novoNome;
 
 
 
     document.getElementById("dropdownName")
     .innerText =
-    nome;
+    novoNome;
 
 
 
-    const primeiraLetra =
-    nome.charAt(0).toUpperCase() || "U";
-
-
-
-    document.getElementById("avatar")
-    .innerText =
-    primeiraLetra;
-
-
-
-    const avatarUrl =
-    updateData.data.avatar_url;
-
-
-
-    if(avatarUrl){
-
-      profileAvatar.innerHTML = `
-        <img
-          src="${avatarUrl}"
-          class="profile-image"
-        >
-      `;
-
-    }else{
-
-      profileAvatar.innerHTML = `
-        <span id="profileLetter">
-          ${primeiraLetra}
-        </span>
-      `;
-
-    }
+    renderAvatar(
+      novoNome,
+      avatarUrl
+    );
 
 
 
     senhaInput.value = "";
+
+    avatarFile = null;
 
 
 
@@ -360,8 +474,6 @@ form.addEventListener("submit",async(e)=>{
 async function logout(){
 
   await window.supabaseClient.auth.signOut();
-
-
 
   window.location.href =
   "login.html";

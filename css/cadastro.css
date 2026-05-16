@@ -481,6 +481,16 @@ body::before{
   font-size:14px;
 }
 
+select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select 
+
+
+
 .cadastro-card{
   width:650px;
   padding:56px;
