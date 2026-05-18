@@ -7,6 +7,7 @@ const dropdown =
 document.getElementById("dropdown");
 
 
+
 userTrigger.addEventListener("click",(e)=>{
 
   e.stopPropagation();
@@ -14,6 +15,7 @@ userTrigger.addEventListener("click",(e)=>{
   dropdown.classList.toggle("active");
 
 });
+
 
 
 document.addEventListener("click",(e)=>{
@@ -33,12 +35,10 @@ document.addEventListener("click",(e)=>{
 
 async function carregarUsuario(){
 
-  const {
-    data:{ user }
-  } =
+  const { data, error } =
   await window.supabaseClient.auth.getUser();
 
-  if(!user){
+  if(error || !data.user){
 
     window.location.href =
     "login.html";
@@ -47,33 +47,49 @@ async function carregarUsuario(){
 
   }
 
+  const user = data.user;
 
-
-  const { data:profile } =
-  await window.supabaseClient
-  .from("profiles")
-  .select("*")
-  .eq("id", user.id)
-  .single();
+  console.log(user);
 
 
 
   const nome =
-  profile?.nome || "Usuário";
+
+    user.user_metadata?.nome ||
+
+    user.user_metadata?.full_name ||
+
+    user.user_metadata?.name ||
+
+    user.email?.split("@")[0] ||
+
+    "Usuário";
+
+
 
   const genero =
-  profile?.genero || "";
+  user.user_metadata?.genero || "";
 
 
 
-  document.getElementById("userName").innerText =
-  nome;
+  document.getElementById("userName")
+  .innerText = nome;
 
-  document.getElementById("dropdownName").innerText =
-  nome;
 
-  document.getElementById("welcomeTitle").innerText =
-  `Olá, ${nome}`;
+
+  document.getElementById("dropdownName")
+  .innerText = nome;
+
+
+
+  document.getElementById("welcomeTitle")
+  .innerHTML = `Olá, ${nome}`;
+
+
+
+  document.getElementById("avatarLetter")
+  .innerText =
+  nome.charAt(0).toUpperCase();
 
 
 
@@ -102,13 +118,6 @@ async function carregarUsuario(){
     "Boas-vindas";
 
   }
-
-
-  const primeiraLetra =
-  nome.charAt(0).toUpperCase();
-
-  document.getElementById("avatar").innerText =
-  primeiraLetra;
 
 }
 

@@ -1,90 +1,71 @@
-async function carregarDadosUsuario(){
+async function carregarUsuario(){
 
-  const {
-    data:{ user }
-  } =
+  const { data, error } =
   await window.supabaseClient.auth.getUser();
 
-  if(!user) return;
+  if(error || !data.user){
+
+    window.location.href =
+    "login.html";
+
+    return;
+  }
+
+  const user = data.user;
+
+  let nome = "Usuário";
 
 
 
-  const nome =
-  user.user_metadata.nome || "Usuário";
+  // LOGIN NORMAL
+  if(user.user_metadata?.nome){
+
+    nome =
+    user.user_metadata.nome;
+
+  }
 
 
 
-  const avatarUrl =
-  user.user_metadata.avatar_url || "";
+  // LOGIN GOOGLE
+  else if(user.user_metadata?.full_name){
+
+    nome =
+    user.user_metadata.full_name;
+
+  }
 
 
 
-  const primeiraLetra =
+  // EMAIL FALLBACK
+  else if(user.email){
+
+    nome =
+    user.email.split("@")[0];
+
+  }
+
+
+
+  // TOPO
+  document.getElementById("userName")
+  .innerText = nome;
+
+  // DROPDOWN
+  document.getElementById("dropdownName")
+  .innerText = nome;
+
+  // TITULO
+  document.getElementById("welcomeTitle")
+  .innerText = `Olá, ${nome}`;
+
+  // AVATAR
+  document.getElementById("avatarLetter")
+  .innerText =
   nome.charAt(0).toUpperCase();
-
-
-
-  const avatar =
-  document.getElementById("avatar");
-
-
-
-  const userName =
-  document.getElementById("userName");
-
-
-
-  const dropdownName =
-  document.getElementById("dropdownName");
-
-
-
-  if(userName){
-
-    userName.innerText =
-    nome;
-
-  }
-
-
-
-  if(dropdownName){
-
-    dropdownName.innerText =
-    nome;
-
-  }
-
-
-
-  if(avatar){
-
-    avatar.innerHTML = "";
-
-
-
-    if(avatarUrl){
-
-      const img =
-      document.createElement("img");
-
-      img.src =
-      avatarUrl;
-
-      img.className =
-      "top-avatar-image";
-
-      avatar.appendChild(img);
-
-    }else{
-
-      avatar.innerText =
-      primeiraLetra;
-
-    }
-
-  }
 
 }
 
-carregarDadosUsuario();
+
+
+carregarUsuario();

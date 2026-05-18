@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard • CogniFy AI</title>
+
+  <title>
+    Dashboard • CogniFy AI
+  </title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="./assets/favicon.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="./assets/favicon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/dashboard.css"
+  >
+
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="css/dashboard.css">
 
 </head>
 
+
+
 <body>
+
+  <!-- ========================= -->
+  <!-- TOPBAR -->
+  <!-- ========================= -->
 
   <header class="topbar">
 
@@ -30,33 +58,54 @@
     </div>
 
 
-
     <div class="user-menu">
 
-      <button class="user-trigger" id="userTrigger">
+      <button
+        class="user-trigger"
+        id="userTrigger"
+      >
 
-        <div class="avatar" id="avatar">
+        <div class="avatar">
+
+          <span id="avatarLetter">
+            U
+          </span>
+
         </div>
+
+
 
         <div class="user-info">
 
-          <span class="welcome-text" id="welcomeText">
-            Bem-vindo
+          <span
+            class="welcome-text"
+            id="welcomeText"
+          >
+            Boas-vindas
           </span>
 
-          <span class="user-name" id="userName">
+          <span
+            class="user-name"
+            id="userName"
+          >
             Usuário
           </span>
 
         </div>
 
-        <i data-lucide="chevron-down" class="dropdown-arrow"></i>
+        <i
+          data-lucide="chevron-down"
+          class="dropdown-arrow"
+        ></i>
 
       </button>
 
 
 
-      <div class="dropdown" id="dropdown">
+      <div
+        class="dropdown"
+        id="dropdown"
+      >
 
         <div class="dropdown-header">
 
@@ -83,45 +132,74 @@
         <div class="dropdown-divider"></div>
 
 
-        <button class="dropdown-item" onclick="window.location.href='perfil.html'">
+
+        <button
+          class="dropdown-item"
+          onclick="window.location.href='perfil.html'"
+        >
+
           <i data-lucide="user-round"></i>
+
           <span>
             Meu perfil
           </span>
+
         </button>
 
 
 
-        <button class="dropdown-item" onclick="window.location.href='configuracoes.html'">
+        <button
+          class="dropdown-item"
+          onclick="window.location.href='configuracoes.html'"
+        >
+
           <i data-lucide="settings-2"></i>
+
           <span>
             Configurações
           </span>
+
         </button>
 
 
 
-        <button class="dropdown-item" onclick="window.location.href='preferencias.html'">
+        <button
+          class="dropdown-item"
+          onclick="window.location.href='preferencias.html'"
+        >
+
           <i data-lucide="sparkles"></i>
+
           <span>
             Preferências da IA
           </span>
+
         </button>
+
 
 
         <div class="dropdown-divider"></div>
 
 
-        <button class="dropdown-item danger" onclick="logout()">
+
+        <button
+          class="dropdown-item danger"
+          onclick="logout()"
+        >
+
           <i data-lucide="log-out"></i>
+
           <span>
             Sair da conta
           </span>
-        </button>
-      </div>
-    </div>
-  </header>
 
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
 
 
   <main class="dashboard">
@@ -136,9 +214,13 @@
 
       </div>
 
+
+
       <h1 id="welcomeTitle">
         Olá
       </h1>
+
+
 
       <p>
         Organize seus estudos, acompanhe
@@ -146,6 +228,7 @@
         uma rotina inteligente baseada
         no seu ritmo.
       </p>
+
 
 
       <button class="start-btn">
@@ -225,10 +308,12 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <script src="./js/supabase.js"></script>
+
   <script src="./js/auth-guard.js"></script>
-  <script src="./js/user-loader.js"></script>
-  <script src="js/dashboard.js"></script>
+
+  <script src="./js/dashboard.js"></script>
 
 </body>
 
