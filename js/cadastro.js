@@ -20,6 +20,54 @@ toggleSenha.addEventListener("click",()=>{
 
 });
 
+
+
+// ============================
+// LOGIN COM GOOGLE
+// ============================
+
+const googleBtn =
+document.getElementById("google-login");
+
+if(googleBtn){
+
+  googleBtn.addEventListener("click", async ()=>{
+
+    const { error } =
+    await window.supabaseClient.auth.signInWithOAuth({
+
+      provider:"google",
+
+      options:{
+
+        redirectTo:
+        "https://cogni-fy-pi.vercel.app/dashboard.html"
+
+      }
+
+    });
+
+    if(error){
+
+      console.log(error);
+
+      mostrarMensagem(
+        "Erro ao entrar com Google.",
+        true
+      );
+
+    }
+
+  });
+
+}
+
+
+
+// ============================
+// CADASTRO NORMAL
+// ============================
+
 async function cadastrar(event){
 
   event.preventDefault();

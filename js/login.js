@@ -1,4 +1,3 @@
-
 lucide.createIcons();
 
 const toggleSenha =
@@ -21,6 +20,54 @@ toggleSenha.addEventListener("click",()=>{
 
 });
 
+
+
+// ============================
+// LOGIN COM GOOGLE
+// ============================
+
+const googleBtn =
+document.getElementById("google-login");
+
+if(googleBtn){
+
+  googleBtn.addEventListener("click", async ()=>{
+
+    const { error } =
+    await window.supabaseClient.auth.signInWithOAuth({
+
+      provider:"google",
+
+      options:{
+
+        redirectTo:
+        "https://cogni-fy-pi.vercel.app/dashboard.html"
+
+      }
+
+    });
+
+    if(error){
+
+      console.log(error);
+
+      mostrarMensagem(
+        "Erro ao entrar com Google.",
+        true
+      );
+
+    }
+
+  });
+
+}
+
+
+
+// ============================
+// LOGIN NORMAL
+// ============================
+
 async function login(event){
 
   event.preventDefault();
@@ -33,8 +80,6 @@ async function login(event){
 
   const botao =
   document.querySelector(".submit-btn");
-
-
 
 
 
@@ -68,8 +113,6 @@ async function login(event){
 
 
 
-  
-
   if(error){
 
     botao.disabled = false;
@@ -87,7 +130,7 @@ async function login(event){
     return;
   }
 
-  
+
 
   mostrarMensagem(
     "Login realizado!"
@@ -146,4 +189,3 @@ function mostrarMensagem(
   },3000);
 
 }
-

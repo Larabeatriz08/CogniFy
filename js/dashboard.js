@@ -44,22 +44,25 @@ async function carregarUsuario(){
     "login.html";
 
     return;
+
   }
 
 
 
-  const nome =
-  user.user_metadata.nome || "Usuário";
+  const { data:profile } =
+  await window.supabaseClient
+  .from("profiles")
+  .select("*")
+  .eq("id", user.id)
+  .single();
 
+
+
+  const nome =
+  profile?.nome || "Usuário";
 
   const genero =
-  user.user_metadata.genero || "masculino";
-
-
-  const saudacao =
-  genero === "feminino"
-  ? "Bem-vinda"
-  : "Bem-vindo";
+  profile?.genero || "";
 
 
 
@@ -69,12 +72,36 @@ async function carregarUsuario(){
   document.getElementById("dropdownName").innerText =
   nome;
 
-  document.getElementById("welcomeText").innerText =
-  saudacao;
-
   document.getElementById("welcomeTitle").innerText =
   `Olá, ${nome}`;
 
+
+
+  const welcomeText =
+  document.querySelector(".welcome-text");
+
+
+
+  if(genero === "masculino"){
+
+    welcomeText.innerText =
+    "Bem-vindo";
+
+  }
+
+  else if(genero === "feminino"){
+
+    welcomeText.innerText =
+    "Bem-vinda";
+
+  }
+
+  else{
+
+    welcomeText.innerText =
+    "Boas-vindas";
+
+  }
 
 
   const primeiraLetra =
