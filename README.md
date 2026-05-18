@@ -48,7 +48,6 @@ O principal objetivo do projeto é demonstrar habilidades em desenvolvimento fro
     <li>Efeitos glassmorphism</li>
     <li>Hover effects premium</li>
     <li>Navbar responsiva</li>
-    <li>Favicon personalizado</li>
     <li>Interface inspirada em startups reais</li>
   </ul>
 </div>
