@@ -30,7 +30,7 @@ Desenvolvido utilizando apenas:
 O principal objetivo do projeto é demonstrar habilidades em desenvolvimento front-end moderno, UI/UX e integração com banco de dados e autenticação.
 
 
----
+
 
 # Funcionalidades
 
@@ -54,7 +54,7 @@ O principal objetivo do projeto é demonstrar habilidades em desenvolvimento fro
 </div>
 
 
----
+
 
 # Objetivo do Projeto
 
@@ -73,7 +73,7 @@ O projeto foi desenvolvido com foco em:
 - Design moderno e profissional
 
 
----
+
 
 # Tecnologias Utilizadas
 
@@ -83,10 +83,12 @@ O projeto foi desenvolvido com foco em:
   <img align="center" alt="CSS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   
   <img align="center" alt="JS" height="40" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
+
+  <img align="center" alt="Supabase" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg">
 </div>
 
 
----
+
 
 # Como Executar o Projeto
 
