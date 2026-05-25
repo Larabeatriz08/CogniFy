@@ -7,7 +7,7 @@ O **CogniFy** é uma plataforma web inteligente desenvolvida com foco em produti
 
 O projeto simula uma experiência moderna inspirada em startups SaaS e plataformas de tecnologia educacional, oferecendo uma interface premium, intuitiva e totalmente responsiva.
 
-Além da landing page, o sistema agora conta com:
+Além da landing page, o sistema conta com:
 
 - Página de login
 - Página de cadastro
