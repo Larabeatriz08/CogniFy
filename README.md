@@ -69,49 +69,6 @@ O projeto foi desenvolvido com foco em praticar e demonstrar habilidades em:
 - Supabase
 
 
-
-## Estrutura
-
-```text
-CogniFy/
-│
-├── assets/
-│
-├── css/
-│
-├── js/
-│
-├── pages/
-│
-├── index.html
-│
-└── README.md
-```
-
-
-
-## Como Executar
-
-Clone o repositório:
-
-```bash
-git clone https://github.com/Larabeatriz08/Cognify.git
-```
-
-Entre na pasta do projeto:
-
-```bash
-cd Cognify
-```
-
-Abra o arquivo principal em seu navegador:
-
-```text
-index.html
-```
-
-
-
 ## Deploy
 
 A aplicação está disponível em:
